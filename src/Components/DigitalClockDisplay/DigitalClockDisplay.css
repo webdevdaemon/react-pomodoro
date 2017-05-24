@@ -1,0 +1,61 @@
+.DigitalClockDisplay {
+	background: transparent;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.clock-display-label {
+	margin: 0;
+	padding: 0;
+}
+.clock-display-label.hours {
+	background: orangered;
+	box-shadow: 0 0 10px orangered;
+	border-radius: 5px;
+	font-size: 2vmin;
+}
+.clock-display-label.minutes {
+	background: royalblue;
+	box-shadow: 0 0 10px royalblue;
+	border-radius: 5px;
+	font-size: 2vmin;
+}
+.clock-display-label.seconds {
+	background: greenyellow;
+	box-shadow: 0 0 10px greenyellow;
+	border-radius: 5px;
+	font-size: 2vmin;
+}
+
+.clock-display {
+	margin: 0;
+}
+
+.clock-display.hours {
+	color: orangered;
+	text-shadow: 0 0 10px orangered;
+}
+
+.clock-display.minutes {
+	color: royalblue;
+	text-shadow: 0 0 10px royalblue;
+}
+
+.clock-display.seconds {
+	color: greenyellow;
+	text-shadow: 0 0 10px greenyellow;
+}
+
+.seperator-wrapper {
+	color: whitesmoke;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 10vmin;
+}
+
+.seperator {
+	margin: 0;
+	padding: 0;
+}

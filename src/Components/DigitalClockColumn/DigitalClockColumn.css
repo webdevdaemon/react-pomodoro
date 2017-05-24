@@ -1,0 +1,37 @@
+.DigitalClockColumn {
+	background: transparent;
+	display: block;
+	font-size: 10vmin;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: auto;
+}
+
+.clock-display-label {
+	font-size: 3vmin;
+}
+.clock-display-label .hours {
+}
+.clock-display-label .minutes {
+
+}
+.clock-display-label .seconds {
+
+}
+
+.clock-display {
+
+}
+
+.hours {
+
+}
+
+.minutes {
+
+}
+
+.seconds {
+
+}

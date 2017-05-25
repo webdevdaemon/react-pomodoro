@@ -21,6 +21,7 @@ class Button extends React.Component {
 		)
 	}
 }
+
 Button.propTypes = {
 	toggledOn: PropTypes.bool.isRequired,
 	labelOff: PropTypes.string.isRequired,
@@ -33,6 +34,7 @@ Button.propTypes = {
 	timerToggler: PropTypes.func.isRequired,
 	style: PropTypes.object,
 }
+
 Button.defaultProps = {
 	isRunning: false,
 	labelOff: 'Do It',

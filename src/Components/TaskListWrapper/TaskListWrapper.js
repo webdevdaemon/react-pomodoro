@@ -7,7 +7,7 @@ import TaskList from '../TaskList/index'
 const TaskListWrapper = ({stateObject}) => (
 	<div className="TaskListWrapper">
 		<TaskList
-			taskList={stateObject.task_list}
+			tasks={stateObject.task_list}
 		/>
 	</div>
 )

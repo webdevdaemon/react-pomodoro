@@ -18,25 +18,34 @@ class App extends Component {
 		}
 	}
 
-	_timerToggler = () => {
-		this.setState((prevState, props) => {
-			console.log('Timer Toggled', prevState.is_running, 'changed to:', this.state.is_running)
-			return {
-				is_running: (prevState.is_running) ? false : true
+	_timerToggler = (is_run = this.state.is_running) => {
+		this.setState({
+			is_running: !is_run
+		}, () => {
+			let countdown
+			if (this.state.is_running) {
+				countdown = setInterval(() => {
+					console.log('beep')
+				}, 1000)
+			} else {
+				clearInterval(countdown)
 			}
 		})
+		console.log('Timer Toggled', is_run, 'changed to:', this.state.is_running)
 	}
 
-	_createNewTask = (e) => {
-
+	_timerSetter = (timer_setup_obj) => {
 		this.setState({
-
+			timer: Object.assign(this.state.timer, timer_setup_obj)
 		})
 	}
 
-	_deleteSelectedTask = (e) => {
-
-	}
+	// _createNewTask = (e) => {
+	// 		this.setState({
+	// 		})
+	// }
+	// _deleteSelectedTask = (e) => {
+	// }
 
 	_addTaskToList = (task_object) => {
 		this.setState((prevState, props) => {
@@ -55,7 +64,8 @@ class App extends Component {
 					<ControlWrapper
 						stateObject={this.state}
 						timerToggler={this._timerToggler}
-						addTaskToList={this.state._addTaskToList}
+						timerSetter={this._timerSetter}
+						addTaskToList={this._addTaskToList}
 					/>
 					<TaskListWrapper stateObject={this.state} />
 				</AppWrapper>

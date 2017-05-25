@@ -1,4 +1,6 @@
 .TaskListItem {
-	background: #5ee;
-	display: block;
+	color: #999;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }

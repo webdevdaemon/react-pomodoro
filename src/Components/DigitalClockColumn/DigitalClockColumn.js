@@ -21,7 +21,7 @@ const DigitalClockColumn = ({timeValue, sectionLabel}) => (
 )
 
 DigitalClockColumn.propTypes = {
-	timeValue: PropTypes.number,
+	timeValue: PropTypes.node,
 	sectionLabel: PropTypes.string,
 }
 DigitalClockColumn.defaultProps = {

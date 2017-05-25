@@ -6,35 +6,35 @@ import React from 'react'
 const TaskListItem = ({ taskItem }) => (
 	<li className="TaskListItem">
 
-		<div 'item-text'>
+		<div className='item-text'>
 
-			<div 'item-name'>
+			<div className='item-name'>
 				<p> {taskItem.name} </p>
 			</div>
 
-			<div 'item-notes'>
+			<div className='item-notes'>
 				<p> {taskItem.notes} </p>
 			</div>
 		</div>
 
-		<div 'item-time'>
+		<div className='item-time'>
 
-			<div 'item-hours'>
-
+			<div className='item-hours'>
 				<p> {taskItem.hours} </p>
-			</div >
+			</div>
 
-			<div 'item-minutes'>
+			<div className='item-minutes'>
 				<p> {taskItem.minutes} </p>
-			</div >
-
-		</div>
-		<div 'item-minutes'>
-			<p> {taskItem.name} </p>
+			</div>
 		</div>
 
-			<p> {taskItem.name} </p>
+		<div className='item-break'>
+			<p className="label label-break">Break</p>
+			<p className="break break-value">
+				{taskItem.break}
+			</p>
 		</div>
+
 		<p> {taskItem.hours.toString()} </p>
 		<p> {taskItem.minutes.toString()} </p>
 		<p> {taskItem.seconds.toString()} </p>

@@ -113,7 +113,7 @@ class ControlPanel extends React.Component {
 					backgroundHover='white'
 					color='white'
 					colorHover='black'
-					timerToggler={this.props.timerToggler}
+					handler={this.props.timerToggler}
 				/>
 			</div>
 		)

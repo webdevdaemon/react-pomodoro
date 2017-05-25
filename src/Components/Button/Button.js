@@ -11,7 +11,7 @@ class Button extends React.Component {
 
 	render() {
 		return (
-			<button className="Button" onClick={this.props.timerToggler}>
+			<button className='Button btn' id='timer-toggle' onClick={this.props.handler}>
 				{
 					(this.props.toggledOn) ?
 					(this.props.labelOn)   :
@@ -31,7 +31,7 @@ Button.propTypes = {
 	backgroundHover: PropTypes.string,
 	color: PropTypes.string.isRequired,
 	colorHover: PropTypes.string,
-	timerToggler: PropTypes.func.isRequired,
+	handler: PropTypes.func.isRequired,
 	style: PropTypes.object,
 }
 

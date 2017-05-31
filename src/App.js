@@ -20,49 +20,61 @@ class App extends Component {
 			break_length: 5,
 			is_running: false,
 			task_list: [],
-			task_current: {},
+			task_current: null,
 		}
 	}
 
 	_timeKiller = (past = this.state.timer) => {
-		if ( past.seconds > 0 ) 	{
+		if (past.seconds > 0) {
 			return {
 				timer: {
 					hours: past.hours,
 					minutes: past.minutes,
-					seconds: past.seconds-1,
+					seconds: past.seconds - 1,
 				}
 			}
-		}
-		else if ( past.minutes > 0 && past.seconds === 0 ) 	{
+		} else if (past.minutes > 0 && past.seconds === 0) {
 			return {
 				timer: {
 					hours: past.hours,
-					minutes: past.minutes-1,
+					minutes: past.minutes - 1,
 					seconds: 59,
 				}
 			}
-		}
-		else if ( past.hours > 0 && (past.minutes === 0 && past.seconds === 0) ) {
+		} else if (past.hours > 0 && (past.minutes === 0 && past.seconds === 0)) {
 			return {
 				timer: {
-					hours: past.hours-1,
+					hours: past.hours - 1,
 					minutes: 59,
 					seconds: 59,
 				}
 			}
-		}
-		else if ( past.seconds === 0 && past.minutes === 0 && past.hours === 0 ) {
-			return (!this.state.on_break) ? {
+		} else if (past.seconds === 0 && past.minutes === 0 && past.hours === 0) {
+			return (!this.state.on_break) ?
+			{
 				is_running: true,
+				on_break: true,
+				timer: {
+					seconds: 0,
+					minutes: this.state.timer.minutes,
+					hours: 0
+				}
+			} :
+			{
+				is_running: false,
+				on_break: false,
+				timer: {
+					seconds: 0,
+					minutes: 0,
+					hours: 0
+				}
 			}
-		}
-		else {
+		} else {
 			return {
 				timer: {
 					hours: 0,
 					minutes: 0,
-					seconds: 0,
+					seconds: 0
 				}
 			}
 		}
@@ -105,25 +117,31 @@ class App extends Component {
 	_addTaskToList = (task_object) => {
 		this.setState((prevState, props) => {
 			console.log('Added Task to TaskList:', task_object)
-			return { task_list: prevState.task_list.concat(task_object) }
+			return {
+				task_list: prevState.task_list.concat(task_object)
+			}
 		})
 	}
 
 	_getNextTaskFromList = (task_list = this.state.task_list) => {
 		this.setState({
 			task_list: task_list.slice(1),
-			current_task: task_list.slice(0, 1),
-		},	() => {
-			if (!this.state.current_task) {
+			task_current: task_list.slice(0, 1),
+		}, () => {
+			if (isNull(this.state.task_current)) {
 				this._timerSetter({
-					timer: {hours: 0, minutes: 0, seconds: 0},
+					timer: {
+						hours: 0,
+						minutes: 0,
+						seconds: 0
+					},
 					is_running: false,
 					task_list: [],
-					current_task: {},
+					task_current: {},
 				})
 				return
 			}
-			this._timerSetter(this.state.current_task)
+			this._timerSetter(this.state.task_current)
 		})
 	}
 
@@ -131,9 +149,13 @@ class App extends Component {
 		return (
 			<div className="App">
 				<AppWrapper>
-					<ClockWrapper stateObject={this.state} />
-					<ControlWrapper stateObject={this.state} timerToggler={this._timerToggler} timerSetter={this._timerSetter} addTaskToList={this._addTaskToList} />
-					<TaskListWrapper stateObject={this.state} />
+					<ClockWrapper stateObject={ this.state } />
+					<ControlWrapper stateObject={ this.state }
+                                    timerToggler={ this._timerToggler }
+                                    timerSetter={ this._timerSetter }
+                                    addTaskToList={ this._addTaskToList }
+					/>
+					<TaskListWrapper stateObject={ this.state } />
 				</AppWrapper>
 			</div>
 		)

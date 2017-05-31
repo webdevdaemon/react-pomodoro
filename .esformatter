@@ -1,13 +1,10 @@
 {
   "plugins": [
-    "esformatter-jsx",
-<<<<<<< HEAD
-    "esformatter-onevar",
-    "esformatter-align"
-=======
-    "esformatter-onevar"
->>>>>>> 97b25f53e79c42a0aa5262ea4b90cb2fa3a589d8
+    "esformatter-jsx"
   ],
+  "indent": {
+    "value": "    "
+  },
   // this is the section this plugin will use to store the settings for the jsx formatting
   "jsx": {
     // whether to recursively format jsx expressions with esformatter
@@ -23,21 +20,22 @@
     "attrsOnSameLineAsTag": false,
      // how many attributes should the node have before having to put each
      // attribute in a new line. Default 1
-     "maxAttrsOnTag": 2,
+     "maxAttrsOnTag": 3,
     // if the attributes are going to be put each one on its own line, then keep the first
     // on the same line as the open tag
-    "firstAttributeOnSameLine": true,
+    "firstAttributeOnSameLine": false,
     // default to one space. Make it empty if you don't like spaces between JSXExpressionContainers
     "spaceInJSXExpressionContainers": " ",
     // align the attributes with the first attribute (if the first attribute was kept on the same line as on the open tag)
     "alignWithFirstAttribute": true,
     "htmlOptions": { // same as the ones passed to js-beautifier.html
-      "brace_style": "collapse",
+      "brace_style": "collapse, preserve-inline",
       "indent_char": " ",
       "indent_size": 4,
-      "max_preserve_newlines": 2,
-      "preserve_newlines": true
-      //wrap_line_length: 250
+      "preserve_newlines": true,
+      "max_preserve_newlines": 4,
+      "space_in_paren": true,
+      "comma_first": true
     }
   }
 }

@@ -1,8 +1,12 @@
 {
   "plugins": [
     "esformatter-jsx",
+<<<<<<< HEAD
     "esformatter-onevar",
     "esformatter-align"
+=======
+    "esformatter-onevar"
+>>>>>>> 97b25f53e79c42a0aa5262ea4b90cb2fa3a589d8
   ],
   // this is the section this plugin will use to store the settings for the jsx formatting
   "jsx": {

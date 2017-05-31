@@ -2,10 +2,10 @@ import './App.css'
 
 import React, { Component } from 'react'
 
-import AppWrapper from './Components/AppWrapper/AppWrapper'
+import AppWrapper from './Components/AppWrapper/index'
 import ClockWrapper from './Components/ClockWrapper/index'
-import ControlWrapper from './Components/ControlWrapper/ControlWrapper'
-import TaskListWrapper from './Components/TaskListWrapper/TaskListWrapper'
+import ControlWrapper from './Components/ControlWrapper/index'
+import TaskListWrapper from './Components/TaskListWrapper/index'
 
 class App extends Component {
 	constructor() {
@@ -24,10 +24,47 @@ class App extends Component {
 	}
 
 	_timeKiller = (past = this.state.timer) => {
-		if 		(past.seconds > 0) 	{ return {timer: {seconds: past.seconds-1}} }
-		else if (past.minutes > 0) 	{ return {timer: {seconds: 59, minutes: past.minutes-1}} }
-		else if (past.hours   > 0) 	{ return {timer: {seconds: 59, minutes: 59, hours: past.hours-1}} }
-		else 						{ return {is_running: false} }
+		if ( past.seconds > 0 ) 	{
+			return {
+				timer: {
+					hours: past.hours,
+					minutes: past.minutes,
+					seconds: past.seconds-1,
+				}
+			}
+		}
+		else if ( past.minutes > 0 && past.seconds === 0 ) 	{
+			return {
+				timer: {
+					hours: past.hours,
+					minutes: past.minutes-1,
+					seconds: 59,
+				}
+			}
+		}
+		else if ( past.hours > 0 && (past.minutes === 0 && past.seconds === 0) ) {
+			return {
+				timer: {
+					hours: past.hours-1,
+					minutes: 59,
+					seconds: 59,
+				}
+			}
+		}
+		else if ( past.seconds === 0 && past.minutes === 0 && past.hours === 0 ) {
+			return {
+				is_running: false,
+			}
+		}
+		else {
+			return {
+				timer: {
+					hours: 0,
+					minutes: 0,
+					seconds: 0,
+				}
+			}
+		}
 	}
 
 	_ticker = (start = false) => {
@@ -36,9 +73,9 @@ class App extends Component {
 
 			window.interval = setInterval(() => {
 
-				let future = this._timeKiller()
+				let future = this._timeKiller(this.state.timer)
 				this.setState(future, () => {
-					console.log('[[[ ', this.state.hours, ' ||| ', this.state.minutes, ' ||| ', this.state.seconds, ' ]]]')
+					console.log('[[[ ', this.state.timer.hours, ' ||| ', this.state.timer.minutes, ' ||| ', this.state.timer.seconds, ' ]]]')
 				})
 
 			}, 1000)

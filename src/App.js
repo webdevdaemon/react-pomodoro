@@ -83,16 +83,12 @@ class App extends Component {
 	_ticker = (start = false) => {
 		if (start) {
 			console.log('TIMER START')
-
 			window.interval = setInterval(() => {
-
 				let future = this._timeKiller(this.state.timer)
 				this.setState(future, () => {
 					console.log('[[[ ', this.state.timer.hours, ' ||| ', this.state.timer.minutes, ' ||| ', this.state.timer.seconds, ' ]]]')
 				})
-
 			}, 1000)
-
 		} else {
 			console.log('TIMER STOP')
 			clearInterval(window.interval)
@@ -128,12 +124,12 @@ class App extends Component {
 			task_list: task_list.slice(1),
 			task_current: task_list.slice(0, 1),
 		}, () => {
-			if (isNull(this.state.task_current)) {
+			if (this.state.task_list = []) {
 				this._timerSetter({
 					timer: {
 						hours: 0,
 						minutes: 0,
-						seconds: 0
+						seconds: 0,
 					},
 					is_running: false,
 					task_list: [],

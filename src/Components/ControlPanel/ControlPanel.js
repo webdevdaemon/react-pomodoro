@@ -12,7 +12,6 @@ class ControlPanel extends React.Component {
             notes: '',
             hours: 0,
             minutes: 0,
-            seconds: 0,
             rest: '',
         }
     // const control_state = this.state
@@ -45,29 +44,29 @@ class ControlPanel extends React.Component {
     render() {
         return (
             <div className="ControlPanel">
-                <form onSubmit={(e) => {
-                                    e.preventDefault()
-                                    let t_o = this.state
-                                    console.log(t_o)
-                                    this.props.addTaskToList(t_o)
-                                // this.props.timerSetter(t_o)
-                                }}>
+                <form onSubmit={ (e) => {
+                                     e.preventDefault()
+                                     let t_o = this.state
+                                     console.log(t_o)
+                                     this.props.addTaskToList(t_o)
+                                 // this.props.timerSetter(t_o)
+                                 } }>
                     <div className="task-info-inputs">
                         <input
                                name='name'
                                label='Task Name'
                                type='text'
                                placeholder='Task Nickname'
-                               value={this.state.name}
-                               onChange={this._onChange}
+                               value={ this.state.name }
+                               onChange={ this._onChange }
                                id='task-name' />
                         <input
                                name='rest'
                                label='Break Length'
                                type='text'
                                placeholder=''
-                               value={this.state.rest}
-                               onChange={this._onChange}
+                               value={ this.state.rest }
+                               onChange={ this._onChange }
                                id='break-length' />
                     </div>
                     <div className="task-time-inputs">
@@ -75,8 +74,8 @@ class ControlPanel extends React.Component {
                                name='hours'
                                type='number'
                                placeholder='00'
-                               value={(this.state.hours < 10) ? `0${this.state.hours}` : this.state.hours}
-                               onChange={this._onChange}
+                               value={ (this.state.hours < 10) ? `0${this.state.hours}` : this.state.hours }
+                               onChange={ this._onChange }
                                id='task-hours'
                                min='0'
                                max='10' />
@@ -84,8 +83,8 @@ class ControlPanel extends React.Component {
                                name='minutes'
                                type='number'
                                placeholder='00'
-                               value={(this.state.minutes < 10) ? `0${this.state.minutes}` : this.state.minutes}
-                               onChange={this._onChange}
+                               value={ (this.state.minutes < 10) ? `0${this.state.minutes}` : this.state.minutes }
+                               onChange={ this._onChange }
                                id='task-minutes'
                                min='0'
                                max='59' />
@@ -93,8 +92,8 @@ class ControlPanel extends React.Component {
                                name='seconds'
                                type='number'
                                placeholder='00'
-                               value={(this.state.seconds < 10) ? `0${this.state.seconds}` : this.state.seconds}
-                               onChange={this._onChange}
+                               value={ (this.state.seconds < 10) ? `0${this.state.seconds}` : this.state.seconds }
+                               onChange={ this._onChange }
                                id='task-seconds'
                                min='0'
                                max='59' />
@@ -108,7 +107,7 @@ class ControlPanel extends React.Component {
                     </div>
                 </form>
                 <Button
-                        toggledOn={this.props.isRunning}
+                        toggledOn={ this.props.isRunning }
                         labelOff='START'
                         labelOn='STOP'
                         size='large'
@@ -116,7 +115,7 @@ class ControlPanel extends React.Component {
                         backgroundHover='white'
                         color='white'
                         colorHover='black'
-                        handler={this.props.timerToggler} />
+                        handler={ this.props.timerToggler } />
             </div>
         )
     }

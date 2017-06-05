@@ -282,7 +282,7 @@ babel-code-frame@6.22.0, babel-code-frame@^6.11.0, babel-code-frame@^6.16.0, bab
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-babel-core@6.22.1, babel-core@^6.0.0:
+babel-core@6.22.1:
   version "6.22.1"
   resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-6.22.1.tgz#9c5fd658ba1772d28d721f6d25d968fc7ae21648"
   dependencies:
@@ -306,7 +306,7 @@ babel-core@6.22.1, babel-core@^6.0.0:
     slash "^1.0.0"
     source-map "^0.5.0"
 
-babel-core@^6.24.1:
+babel-core@^6.0.0, babel-core@^6.24.1:
   version "6.24.1"
   resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-6.24.1.tgz#8c428564dce1e1f41fb337ec34f4c3b022b5ad83"
   dependencies:
@@ -1300,6 +1300,10 @@ boom@2.x.x:
   resolved "https://registry.yarnpkg.com/boom/-/boom-2.10.1.tgz#39c8918ceff5799f83f9492a848f625add0c766f"
   dependencies:
     hoek "2.x.x"
+
+bootflat@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/bootflat/-/bootflat-2.0.4.tgz#06f432d501178c328dd400d4cad13729c02a954c"
 
 brace-expansion@^1.0.0, brace-expansion@^1.1.7:
   version "1.1.7"
@@ -4826,6 +4830,10 @@ prettier-eslint@^6.1.2:
     pretty-format "^19.0.0"
     require-relative "^0.8.7"
 
+prettier-miscellaneous@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/prettier-miscellaneous/-/prettier-miscellaneous-1.4.0.tgz#18ce13395dccb8b47419c493d17549d786330a9d"
+
 prettier@^1.2.2, prettier@^1.3.0:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.3.1.tgz#fa0ea84b45ac0ba6de6a1e4cecdcff900d563151"
@@ -4981,7 +4989,7 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-autocomplete-cli@^0.0.3:
+react-autocomplete-cli@*:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/react-autocomplete-cli/-/react-autocomplete-cli-0.0.3.tgz#0cbcbe19ec2dae96c8a3763fc86f980dbdedff1a"
   dependencies:

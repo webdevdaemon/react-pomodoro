@@ -2,9 +2,6 @@
   "plugins": [
     "esformatter-jsx"
   ],
-  "indent": {
-    "value": "    "
-  },
   // this is the section this plugin will use to store the settings for the jsx formatting
   "jsx": {
     // whether to recursively format jsx expressions with esformatter

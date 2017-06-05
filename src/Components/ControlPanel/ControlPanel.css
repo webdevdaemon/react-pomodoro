@@ -11,5 +11,9 @@
 }
 
 .ControlPanel form .task-time-inputs input {
-	width: 34%;
+	width: 100%;
+}
+
+input.time-input {
+	width: 100%;
 }

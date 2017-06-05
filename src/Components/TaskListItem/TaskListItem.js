@@ -22,12 +22,12 @@ const TaskListItem = ({taskItem}) => (
             </div>
         </div>
         <div className='item-break'>
-            <p lassName="label label-break"> Break</p>
-            <p lassName="break break-value"> { taskItem.break }</p>
+            <p className="label label-break"> Break</p>
+            <p className="break break-value"> { taskItem.break }</p>
         </div>
-        <p>{ taskItem.hours.toString() }</p>
-        <p>{ taskItem.minutes.toString() }</p>
-        <p>{ taskItem.seconds.toString() }</p>
+        <p>{ taskItem.timer.hours.toString() }</p>
+        <p>{ taskItem.timer.minutes.toString() }</p>
+        <p>{ taskItem.timer.seconds.toString() }</p>
     </li>
 )
 TaskListItem.propTypes = {

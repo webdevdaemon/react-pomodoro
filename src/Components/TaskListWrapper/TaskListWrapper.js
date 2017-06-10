@@ -4,15 +4,19 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import TaskList from '../TaskList/index'
 
-const TaskListWrapper = ({stateObject}) => (
-	<div className="TaskListWrapper">
-		<TaskList
-			tasks={stateObject.task_list}
-		/>
-	</div>
+const TaskListWrapper = ({ stateObject }) => (
+    <div className="TaskListWrapper wrapper">
+        <div className='task-list-title'>
+            <p>
+				My Tasks
+			</p>
+        </div>
+        <TaskList task_list={stateObject.task_list} />
+    </div>
 )
+
 TaskListWrapper.propTypes = {
-	stateObject: PropTypes.object,
+    stateObject: PropTypes.object,
 }
 TaskListWrapper.defaultProps = {}
 

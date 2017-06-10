@@ -2,3 +2,13 @@
 	background: #5ee;
 	display: block;
 }
+
+ul.task-list-ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+p.no-tasks-msg {
+    margin: 0;
+}

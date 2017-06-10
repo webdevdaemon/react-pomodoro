@@ -1,0 +1,26 @@
+)]}
+{
+ "version": 3,
+ "sources": "/Users/cm/Desktop/git-main/freeCodeCampProjects/pomoJS/src/Components/DigitalClockDisplay/DigitalClockDisplay.js",
+ "file": "/Users/cm/Desktop/git-main/freeCodeCampProjects/pomoJS/_es5/Components/DigitalClockDisplay/DigitalClockDisplay.js",
+ "sourceRoot": "",
+ "names": [
+  "DigitalClockDisplay",
+  "state",
+  "seconds_remaining",
+  "minutes_remaining",
+  "hours_remaining",
+  "props",
+  "timer",
+  "hours",
+  "minutes",
+  "seconds",
+  "Component",
+  "propTypes",
+  "object",
+  "is_running",
+  "bool",
+  "defaultProps"
+ ],
+ "mappings": ";;;;;;;;AAAA;;AAEA;;;;AACA;;;;AACA;;;;AACA;;;;;;;;;;;;IAEMA,mB;;;AACF,mCAAc;AAAA;;AAAA;;AAEV,cAAKC,KAAL,GAAa;AACTC,+BAAmB,CADV;AAETC,+BAAmB,CAFV;AAGTC,6BAAiB;AAHR,SAAb;AAFU;AAOb;;;;iCAEQ;AACL,mBACI;AAAA;AAAA,kBAAK,WAAU,qBAAf;AACI,iEAAoB,cAAa,OAAjC,EAAyC,WAAW,KAAKC,KAAL,CAAWC,KAAX,CAAiBC,KAArE,GADJ;AAEI,oEAFJ;AAGI,iEAAoB,cAAa,SAAjC,EAA2C,WAAW,KAAKF,KAAL,CAAWC,KAAX,CAAiBE,OAAvE,GAHJ;AAII,oEAJJ;AAKI,iEAAoB,cAAa,SAAjC,EAA2C,WAAW,KAAKH,KAAL,CAAWC,KAAX,CAAiBG,OAAvE;AALJ,aADJ;AASH;;;;EApB6B,gBAAMC,S;;AAsBxCV,oBAAoBW,SAApB,GAAgC;AAC5BL,WAAO,oBAAUM,MADW;AAE5BC,gBAAY,oBAAUC;AAFM,CAAhC;AAIAd,oBAAoBe,YAApB,GAAmC;AAC/BT,WAAO,EAACC,OAAO,CAAR,EAAWC,SAAS,EAApB,EAAwBC,SAAS,CAAjC,EADwB;AAE/BI,gBAAY;AAFmB,CAAnC;;kBAKeb,mB"
+}

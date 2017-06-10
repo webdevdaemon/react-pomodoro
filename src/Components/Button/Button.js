@@ -11,10 +11,10 @@ class Button extends React.Component {
 
     render() {
         return (
-            <button className='Button btn' id='timer-toggle' onClick={ this.props.handler }>
-                { (this.props.toggledOn) ?
-                  (this.props.labelOn) :
-                  (this.props.labelOff) }
+            <button className='Button btn' id='timer-toggle' onClick={ this.props.handler } style={ (!this.props.toggledOn) ? {} : { backgroundColor: 'red' } }>
+                {
+                    (this.props.toggledOn) ? this.props.labelOn : this.props.labelOff
+                }
             </button>
         )
     }
@@ -30,7 +30,7 @@ Button.propTypes = {
     labelOn: PropTypes.string.isRequired,
     size: PropTypes.string,
     style: PropTypes.object,
-    toggledOn: PropTypes.bool.isRequired,
+    toggledOn: PropTypes.bool.isRequired
 }
 
 Button.defaultProps = {

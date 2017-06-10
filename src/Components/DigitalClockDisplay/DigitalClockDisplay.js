@@ -6,34 +6,34 @@ import React from 'react'
 import Seperator from '../Seperator/index'
 
 class DigitalClockDisplay extends React.Component {
-	constructor() {
-		super()
-		this.state = {
-			seconds_remaining: 0,
-			minutes_remaining: 0,
-			hours_remaining: 0,
-		}
-	}
+    constructor() {
+        super()
+        this.state = {
+            seconds_remaining: 0,
+            minutes_remaining: 0,
+            hours_remaining: 0
+        }
+    }
 
-	render() {
-		return (
-			<div className="DigitalClockDisplay">
-				<DigitalClockColumn sectionLabel='hours' timeValue={this.props.timer.hours} />
-				<Seperator />
-				<DigitalClockColumn sectionLabel='minutes' timeValue={this.props.timer.minutes} />
-				<Seperator />
-				<DigitalClockColumn sectionLabel='seconds' timeValue={this.props.timer.seconds} />
-			</div>
-		)
-	}
+    render() {
+        return (
+            <div className="DigitalClockDisplay">
+                <DigitalClockColumn sectionLabel='hours' timeValue={this.props.timer.hours} />
+                <Seperator />
+                <DigitalClockColumn sectionLabel='minutes' timeValue={this.props.timer.minutes} />
+                <Seperator />
+                <DigitalClockColumn sectionLabel='seconds' timeValue={this.props.timer.seconds} />
+            </div>
+        )
+    }
 }
 DigitalClockDisplay.propTypes = {
-	timer: PropTypes.object,
-	is_running: PropTypes.bool,
+    timer: PropTypes.object,
+    is_running: PropTypes.bool
 }
 DigitalClockDisplay.defaultProps = {
-	timer: {hours: 1, minutes: 25, seconds: 0},
-	is_running: false,
+    timer: {hours: 1, minutes: 25, seconds: 0},
+    is_running: false
 }
 
 export default DigitalClockDisplay

@@ -1,4 +1,8 @@
 .ControlWrapper {
-	background: #5ee;
+	background: darkorchid;
+	border-radius: 0;
+	border: solid 1px #a5acaf;
 	display: block;
+	max-width: 800px;
+	width: 100%;
 }

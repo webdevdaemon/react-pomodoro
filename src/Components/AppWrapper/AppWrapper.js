@@ -4,12 +4,12 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 const AppWrapper = (props) => (
-	<div className="AppWrapper">
-		{ props.children }
-	</div>
+    <div className="AppWrapper wrapper">
+        { props.children }
+    </div>
 )
 AppWrapper.propTypes = {
-	children: PropTypes.any,
+    children: PropTypes.any,
 }
 AppWrapper.defaultProps = {}
 

@@ -1,0 +1,27 @@
+)]}
+{
+ "version": 3,
+ "sources": "/Users/cm/Desktop/git-main/freeCodeCampProjects/pomoJS/src/Components/ClockWrapper/ClockWrapper.js",
+ "file": "/Users/cm/Desktop/git-main/freeCodeCampProjects/pomoJS/_es5/Components/ClockWrapper/ClockWrapper.js",
+ "sourceRoot": "",
+ "names": [
+  "styles",
+  "stopped",
+  "color",
+  "chillin",
+  "werkin",
+  "ClockWrapper",
+  "stateObject",
+  "timerToggler",
+  "is_running",
+  "rest",
+  "timer",
+  "seperator_flash",
+  "propTypes",
+  "object",
+  "isRequired",
+  "func",
+  "default"
+ ],
+ "mappings": ";;;;;;AAAA;;AAEA;;;;AACA;;;;AACA;;;;AACA;;;;;;AAEA,IAAMA,SAAS;AACXC,aAAS,EAACC,OAAO,WAAR,EADE;AAEXC,aAAS,EAACD,OAAO,gBAAR,EAFE;AAGXE,YAAS,EAACF,OAAO,aAAR;AAHE,CAAf;;AAMA,IAAMG,eAAe,SAAfA,YAAe;AAAA,QAAGC,WAAH,QAAGA,WAAH;AAAA,QAAgBC,YAAhB,QAAgBA,YAAhB;AAAA,WACjB;AAAA;AAAA,UAAK,WAAU,sBAAf;AACI;AAAA;AAAA,cAAK,WAAU,iBAAf;AACI;AAAA;AAAA,kBAAG,OAAS,CAACD,YAAYE,UAAd,GAA4BR,OAAOC,OAAnC,GAA8CK,YAAYG,IAAb,GAAqBT,OAAOG,OAA5B,GAAsCH,OAAOI,MAArG;AAEL,iBAACE,YAAYE,UAAb,eAEAF,YAAYG,IAAZ,GACA,UADA,GACa;AALR;AADJ,SADJ;AAYI,yDAAqB,OAAOH,YAAYI,KAAxC,EAA+C,YAAYJ,YAAYE,UAAvE,EAAmF,gBAAgBF,YAAYK,eAA/G,GAZJ;AAaI;AAAA;AAAA,cAAK,WAAU,8BAAf;AACI;AAAA;AAAA,kBAAK,WAAU,yCAAf;AACI,kEAAQ,WAAU,+CAAlB,EAAkE,WAAWL,YAAYE,UAAzF,EAAqG,UAAS,OAA9G,EAAsH,SAAQ,MAA9H,EAAqI,MAAK,OAA1I,EAAkJ,YAAW,OAA7J,EAAqK,iBAAgB,OAArL,EAA6L,OAAM,OAAnM,EAA2M,YAAW,OAAtN,EAA8N,SAASD,YAAvO;AADJ;AADJ;AAbJ,KADiB;AAAA,CAArB;;AAsBAF,aAAaO,SAAb,GAAyB;AACrBN,iBAAa,oBAAUO,MAAV,CAAiBC,UADT;AAErBP,kBAAc,oBAAUQ,IAAV,CAAeD;AAFR,CAAzB;AAIAT,aAAaW,OAAb,GAAuB,EAAvB;;kBAEeX,Y"
+}

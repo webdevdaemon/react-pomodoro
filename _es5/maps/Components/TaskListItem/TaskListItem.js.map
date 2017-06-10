@@ -1,0 +1,21 @@
+)]}
+{
+ "version": 3,
+ "sources": "/Users/cm/Desktop/git-main/freeCodeCampProjects/pomoJS/src/Components/TaskListItem/TaskListItem.js",
+ "file": "/Users/cm/Desktop/git-main/freeCodeCampProjects/pomoJS/_es5/Components/TaskListItem/TaskListItem.js",
+ "sourceRoot": "",
+ "names": [
+  "TaskListItem",
+  "taskItem",
+  "name",
+  "notes",
+  "hours",
+  "minutes",
+  "break",
+  "propTypes",
+  "object",
+  "isRequired",
+  "defaultProps"
+ ],
+ "mappings": ";;;;;;AAAA;;AAEA;;;;AACA;;;;;;AAEA,IAAMA,eAAe,SAAfA,YAAe;AAAA,QAAGC,QAAH,QAAGA,QAAH;AAAA,WACjB;AAAA;AAAA,UAAI,WAAU,cAAd;AACI;AAAA;AAAA,cAAK,WAAU,WAAf;AACI;AAAA;AAAA,kBAAK,WAAU,WAAf;AACI;AAAA;AAAA;AAAIA,6BAASC;AAAb;AADJ,aADJ;AAII;AAAA;AAAA,kBAAK,WAAU,YAAf;AACI;AAAA;AAAA;AAAID,6BAASE;AAAb;AADJ;AAJJ,SADJ;AASI;AAAA;AAAA,cAAK,WAAU,WAAf;AACI;AAAA;AAAA,kBAAK,WAAU,YAAf;AACI;AAAA;AAAA;AAAIF,6BAASG;AAAb;AADJ,aADJ;AAII;AAAA;AAAA,kBAAK,WAAU,cAAf;AACI;AAAA;AAAA;AAAIH,6BAASI;AAAb;AADJ;AAJJ,SATJ;AAiBI;AAAA;AAAA,cAAK,WAAU,YAAf;AACI;AAAA;AAAA,kBAAG,WAAU,mBAAb;AAAA;AAAA,aADJ;AAEI;AAAA;AAAA,kBAAG,WAAU,mBAAb;AAAkCJ,yBAASK;AAA3C;AAFJ;AAjBJ,KADiB;AAAA,CAArB;AA2BAN,aAAaO,SAAb,GAAyB;AACrBN,cAAU,oBAAUO,MAAV,CAAiBC;AADN,CAAzB;AAGAT,aAAaU,YAAb,GAA4B,EAA5B;;kBAEeV,Y"
+}

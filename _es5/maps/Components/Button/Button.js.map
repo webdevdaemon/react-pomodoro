@@ -1,0 +1,33 @@
+)]}
+{
+ "version": 3,
+ "sources": "/Users/cm/Desktop/git-main/freeCodeCampProjects/pomoJS/src/Components/Button/Button.js",
+ "file": "/Users/cm/Desktop/git-main/freeCodeCampProjects/pomoJS/_es5/Components/Button/Button.js",
+ "sourceRoot": "",
+ "names": [
+  "Button",
+  "state",
+  "props",
+  "handler",
+  "toggledOn",
+  "backgroundColor",
+  "labelOn",
+  "labelOff",
+  "Component",
+  "propTypes",
+  "background",
+  "string",
+  "isRequired",
+  "backgroundHover",
+  "color",
+  "colorHover",
+  "func",
+  "size",
+  "style",
+  "object",
+  "bool",
+  "defaultProps",
+  "isRunning"
+ ],
+ "mappings": ";;;;;;;;AAAA;;AAEA;;;;AACA;;;;;;;;;;;;IAEMA,M;;;AACF,sBAAc;AAAA;;AAAA;;AAEV,cAAKC,KAAL,GAAa,EAAb;AAFU;AAGb;;;;iCAEQ;AACL,mBACI;AAAA;AAAA,kBAAQ,WAAU,YAAlB,EAA+B,IAAG,cAAlC,EAAiD,SAAU,KAAKC,KAAL,CAAWC,OAAtE,EAAgF,OAAS,CAAC,KAAKD,KAAL,CAAWE,SAAb,GAA0B,EAA1B,GAA+B,EAAEC,iBAAiB,KAAnB,EAAvH;AAES,qBAAKH,KAAL,CAAWE,SAAZ,GAAyB,KAAKF,KAAL,CAAWI,OAApC,GAA8C,KAAKJ,KAAL,CAAWK;AAFjE,aADJ;AAOH;;;;EAdgB,gBAAMC,S;;AAiB3BR,OAAOS,SAAP,GAAmB;AACfC,gBAAY,oBAAUC,MAAV,CAAiBC,UADd;AAEfC,qBAAiB,oBAAUF,MAFZ;AAGfG,WAAO,oBAAUH,MAAV,CAAiBC,UAHT;AAIfG,gBAAY,oBAAUJ,MAJP;AAKfR,aAAS,oBAAUa,IAAV,CAAeJ,UALT;AAMfL,cAAU,oBAAUI,MAAV,CAAiBC,UANZ;AAOfN,aAAS,oBAAUK,MAAV,CAAiBC,UAPX;AAQfK,UAAM,oBAAUN,MARD;AASfO,WAAO,oBAAUC,MATF;AAUff,eAAW,oBAAUgB,IAAV,CAAeR;AAVX,CAAnB;;AAaAZ,OAAOqB,YAAP,GAAsB;AAClBC,eAAW,KADO;AAElBf,cAAU,OAFQ;AAGlBD,aAAS,SAHS;AAIlBW,UAAM,OAJY;AAKlBP,gBAAY,MALM;AAMlBG,qBAAiB,OANC;AAOlBC,WAAO,OAPW;AAQlBC,gBAAY;AARM,CAAtB;;kBAWef,M"
+}

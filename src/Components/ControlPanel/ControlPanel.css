@@ -8,172 +8,142 @@
 /*TITLE*/
 
 .control-panel-title p {
-    padding: 0;
-    margin: 0;
-    color: #a5acaf;
-    font-size: 5vmin;
-    text-shadow: 3px 3px 1px #111;
+  color: #a5acaf;
+  font-size: 5vmin;
+  text-shadow: 3px 3px 1px #111;
 }
 
 /*FORM*/
 
 .ControlPanel form {
-    background: #444;
-    padding: 12px;
-
+  background: #444;
 }
 
 .ControlPanel input[type='text'],
 .ControlPanel textarea {
 	border: none;
 	font-size: 2.5vmin;
-	padding: 12px;
-    margin: 0;
-	text-align: left;
-	width: 100%;
 }
 
 .ControlPanel input[type='number'] {
-    border: none;
-    border-radius: 0;
+  border: none;
+  border-radius: 0;
 	font-size: 3vmin;
-	padding: 0;
-    margin: 0;
 }
 
 .ControlPanel .label-task-name {
 	display: block;
-	padding: 0;
-	margin: auto;
 }
 
 /*INPUTS ALL*/
 
 .task-info-input-group {
-    line-height: 1;
-    margin: 0 auto 2vmin auto;
+  line-height: 1;
 }
 
 .ControlPanel input[type='number'],
 .ControlPanel input[type='submit'] {
-    text-align: center;
-    margin: 0;
+  text-align: center;
+  margin: 0;
 }
 
 .ControlPanel input[type='number'] {
-    padding: 1vmin;
-    font-family: 'Input', 'Roboto', sans-serif;
-    font-size: 5vmin;
-    font-weight: 900;
+  font-family: 'Input', 'Roboto', sans-serif;
+  font-size: 5vmin;
+  font-weight: 900;
 }
 
 /*INFO INPUTS*/
 
 #task-name {
-    border-bottom: solid 1px #444;
-    border-radius: 5px 5px 0 0;
-    font-size: 1.75vmin;
-    line-height: 1;
-    margin: 0;
+  border-bottom: solid 1px #444;
+  border-radius: 5px 5px 0 0;
+  font-size: 1.75vmin;
+  line-height: 1;
 }
 
 #task-notes {
 	border-radius: 0 0 5px 5px;
 	font-size: 1.75vmin;
 	line-height: 1;
-	margin: 0;
 }
 
 /* TIME INPUTS */
 
 #task-hours {
-    background: greenyellow;
-    border-radius: 0 0 0 8px;
+  background: greenyellow;
+  border-radius: 0 0 0 8px;
 }
 
 #task-minutes {
-    background: greenyellow;
+  background: greenyellow;
 }
 
 #rest-length {
-    background: cornflowerblue;
-    border-radius: 0 0 8px 0;
-    color: #eee;
+  background: cornflowerblue;
+  border-radius: 0 0 8px 0;
+  color: #eee;
 }
 
 /*SUBMIT TASK*/
 
 #create-task {
-    background: darkorchid;
-    border-radius: 8px;
-    color: #a5acaf;
-    font-family: 'Baloo', 'Roboto', 'sans-serif';
-    margin-top: 2vmin;
-    padding: 12px;
-    text-shadow: 3px 3px 1px #111;
+  background: darkorchid;
+  border-radius: 8px;
+  color: #a5acaf;
+  font-family: 'Baloo', 'Roboto', 'sans-serif';
+  text-shadow: 3px 3px 1px #111;
 }
 
 .ControlPanel label {
 	font-size: 3vmin;
 	line-height: 1;
-	margin: 0;
-    padding: 6px 0 0 0;
 	text-decoration: underline;
 }
 
 .ControlPanel .input-section {
 	font-size: 3vmin;
-	margin: 0;
 }
 
 .ControlPanel .input-section.title.rest {
-	background: cornflowerblue;
+	background: #4662B3;
 	border-radius: 0 8px 0 0;
 	color: #eee;
 	font-weight: 500;
 	font-size: 3vmin;
-	margin: 0;
 	text-decoration: underline;
-	width: 100%;
 }
 
 .ControlPanel .input-section.title.work.hours {
-	background: greenyellow;
+	background: #78B221;
 	border-radius: 8px 0 0 0;
 	color: #111;
 	font-weight: 500;
 	font-size: 3vmin;
-	margin: 0;
 	text-decoration: underline;
-	width: 100%;
 
 }
 
 .ControlPanel .input-section.title.work.minutes {
-	background: greenyellow;
+	background: #78B221;
 	border-radius: 0;
 	color: #111;
 	font-weight: 500;
 	font-size: 3vmin;
-	margin: 0;
 	text-decoration: underline;
-	width: 100%;
 }
 
 .ControlPanel form .task-time-inputs {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
+
 }
 
 .time-input,
 .ControlPanel form .task-time-inputs input {
-	width: 100%;
+
 }
 
 .col-4.row,
 .col-8.row.work-control,
 .task-time-inputs.row {
-    margin: 0;
+
 }

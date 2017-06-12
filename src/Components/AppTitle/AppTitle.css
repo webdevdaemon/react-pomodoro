@@ -1,6 +1,5 @@
 .AppTitle {
 	background: transparent;
-	display: block;
 	line-height: 1;
 }
 
@@ -8,13 +7,15 @@
 .AppTitle small {
 	color: #bbb;
 	font-family: 'Exo2';
-	margin: 0;
-	padding: 0;
 	text-shadow: 5px 3px 1px #000;
+}
+
+.AppTitle .app-title-main small {
+	font-size: 1.5vmin;
 }
 
 .AppTitle h2 {
 	color: yellow;
-	font-size: 6vmin;
+	font-size: 7vmin;
 	text-shadow: 5px 3px 1px #000;
 }

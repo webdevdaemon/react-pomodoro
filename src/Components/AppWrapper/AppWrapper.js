@@ -3,13 +3,14 @@ import './AppWrapper.css'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const AppWrapper = (props) => (
-    <div className="AppWrapper wrapper">
-        { props.children }
-    </div>
+const AppWrapper = ({children, className}) => (
+  <div className={`AppWrapper wrapper ${className}`}>
+    { children }
+  </div>
 )
 AppWrapper.propTypes = {
-    children: PropTypes.any,
+  children: PropTypes.any.isRequired,
+  className: PropTypes.string.isRequired
 }
 AppWrapper.defaultProps = {}
 

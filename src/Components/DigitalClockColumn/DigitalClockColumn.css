@@ -1,13 +1,9 @@
 .DigitalClockColumn {
-	background: transparent;
-	display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
-	font-size: 15vmin;
-    line-height: 1.2;
-	margin: 0;
-	padding: 0;
-	height: 100%;
-	width: auto;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  font-size: 15vmin;
+  line-height: 1.2;
 }

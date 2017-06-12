@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -33,46 +33,46 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var DigitalClockDisplay = function (_React$Component) {
-    _inherits(DigitalClockDisplay, _React$Component);
+  _inherits(DigitalClockDisplay, _React$Component);
 
-    function DigitalClockDisplay() {
-        _classCallCheck(this, DigitalClockDisplay);
+  function DigitalClockDisplay() {
+    _classCallCheck(this, DigitalClockDisplay);
 
-        var _this = _possibleConstructorReturn(this, (DigitalClockDisplay.__proto__ || Object.getPrototypeOf(DigitalClockDisplay)).call(this));
+    var _this = _possibleConstructorReturn(this, (DigitalClockDisplay.__proto__ || Object.getPrototypeOf(DigitalClockDisplay)).call(this));
 
-        _this.state = {
-            seconds_remaining: 0,
-            minutes_remaining: 0,
-            hours_remaining: 0
-        };
-        return _this;
+    _this.state = {
+      seconds_remaining: 0,
+      minutes_remaining: 0,
+      hours_remaining: 0
+    };
+    return _this;
+  }
+
+  _createClass(DigitalClockDisplay, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'DigitalClockDisplay' },
+        _react2.default.createElement(_index2.default, { sectionLabel: 'hours', timeValue: this.props.timer.hours }),
+        _react2.default.createElement(_index4.default, null),
+        _react2.default.createElement(_index2.default, { sectionLabel: 'minutes', timeValue: this.props.timer.minutes }),
+        _react2.default.createElement(_index4.default, null),
+        _react2.default.createElement(_index2.default, { sectionLabel: 'seconds', timeValue: this.props.timer.seconds })
+      );
     }
+  }]);
 
-    _createClass(DigitalClockDisplay, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'div',
-                { className: 'DigitalClockDisplay' },
-                _react2.default.createElement(_index2.default, { sectionLabel: 'hours', timeValue: this.props.timer.hours }),
-                _react2.default.createElement(_index4.default, null),
-                _react2.default.createElement(_index2.default, { sectionLabel: 'minutes', timeValue: this.props.timer.minutes }),
-                _react2.default.createElement(_index4.default, null),
-                _react2.default.createElement(_index2.default, { sectionLabel: 'seconds', timeValue: this.props.timer.seconds })
-            );
-        }
-    }]);
-
-    return DigitalClockDisplay;
+  return DigitalClockDisplay;
 }(_react2.default.Component);
 
 DigitalClockDisplay.propTypes = {
-    timer: _propTypes2.default.object,
-    is_running: _propTypes2.default.bool
+  timer: _propTypes2.default.object,
+  is_running: _propTypes2.default.bool
 };
 DigitalClockDisplay.defaultProps = {
-    timer: { hours: 1, minutes: 25, seconds: 0 },
-    is_running: false
+  timer: { hours: 1, minutes: 25, seconds: 0 },
+  is_running: false
 };
 
 exports.default = DigitalClockDisplay;

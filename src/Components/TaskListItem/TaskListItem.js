@@ -37,7 +37,7 @@ const TaskListItem = ({ taskItem }) => (
 
     {/*--------- BOTTOM ROW ---------*/}
     <div className='task-list-item-bottom-row row no-gutters'>
-      <div className={`item-notes ${reveal-notes`}`}>
+      <div className={`item-notes ${}`}>
         <p>{taskItem.notes}</p>
       </div>
     </div>

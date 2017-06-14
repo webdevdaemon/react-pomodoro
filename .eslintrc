@@ -25,10 +25,6 @@
 	  "react/jsx-closing-bracket-location": 1,
 	  "react/jsx-indent-props": [1, 2],
 	  "react/jsx-indent": [1, 2],
-		// "indent": [0, 4],
-		// "react/jsx-indent": [0, 4],
-		// "react/jsx-indent-props": [0, 4],
-		// "react/jsx-closing-bracket-location": 1,
 		"semi": [2, "never"]
 	}
 }

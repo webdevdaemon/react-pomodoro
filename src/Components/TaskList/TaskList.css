@@ -1,6 +1,5 @@
 .TaskList {
-	background: #5ee;
-	display: block;
+	background: azure;
 }
 
 ul.task-list-ul {
@@ -10,5 +9,42 @@ ul.task-list-ul {
 }
 
 p.no-tasks-msg {
+  color: #111;
   margin: 0;
+  text-align: left;
+  padding: 0 2vmin;
+  font-size: 2.5vmin;
+}
+
+.column-headers {
+  background:greenyellow;
+  font-size: 2vmin;
+  padding: 0 1vmin;
+}
+
+.column-header-name {
+  text-align: left;
+}
+
+.column-header-work {
+  text-align: left;
+}
+
+.column-header-rest {
+  text-align: center;
+}
+
+.column-header-name p {
+  padding: 0 0 0 1vmin;
+  margin: 0;
+}
+
+.column-header-work p {
+  margin: 0;
+  padding: 0;
+}
+
+.column-header-rest p {
+  margin: 0;
+  padding: 0;
 }

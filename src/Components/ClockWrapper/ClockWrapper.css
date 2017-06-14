@@ -1,21 +1,8 @@
 .ClockWrapper {
-	background: #111;
-	border: solid 1px #a5acaf;
-	border-radius: 15px 15px 0 0;
 	display: block;
+  margin: 0;
+  padding: 0;
 	width: 100%;
-}
-
-.work-rest-alert {
-	color: white;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 5vh;
-}
-
-.work-rest-alert p {
-
 }
 
 .timer-toggle {
@@ -23,17 +10,20 @@
 }
 
 .timer-toggle-wrap {
-
+  margin: 0;
+  padding: 0;
 }
 
-.timer-toggle button {
-	background: #00ff00;
-	color: black;
-	font-size: 2vh;
+.timer-toggle-wrap button {
+	background: limegreen;
+	color: white;
+	font-size: 8vmin;
+  padding: 6px 0 0 0;
+  text-shadow: 3px 3px 1px #111;
 }
 
 #timer-toggle {
   border-radius: 0;
-	box-shadow: 0 0 15px yellow;
+	/*box-shadow: 0 0 15px yellow;*/
 	font-family: 'Baloo', 'Roboto', 'sans-serif';
 }

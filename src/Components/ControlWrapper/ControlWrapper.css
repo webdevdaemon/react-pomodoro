@@ -1,9 +1,8 @@
 .ControlWrapper {
-	background: darkorchid;
 	border-radius: 0;
-	border: solid 1px #a5acaf;
 }
 
-.control-panel-title {
-
+.ControlWrapper .control-panel-title p {
+  color: #efefef;
+  font-size: 5vmin;
 }

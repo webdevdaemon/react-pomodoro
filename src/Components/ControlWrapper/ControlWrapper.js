@@ -7,7 +7,7 @@ import React from 'react'
 const ControlWrapper = props => (
   <div className={`ControlWrapper wrapper ${props.className}`}>
     <div className='control-panel-title'>
-      <p>Add New Task</p>
+      <p>Create Task</p>
     </div>
     <ControlPanel isRunning={props.stateObject.is_running} onBreak={props.stateObject.rest} timerSetter={props.timerSetter} addTaskToList={props.addTaskToList} setTimerFromRest={props.setTimerFromRest} />
   </div>

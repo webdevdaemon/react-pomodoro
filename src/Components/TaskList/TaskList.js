@@ -6,6 +6,11 @@ import TaskListItem from '../TaskListItem/TaskListItem'
 
 const TaskList = ( { task_list } ) => (
   <div className="TaskList">
+    <div className="row no-gutters column-headers">
+      <div className="col-8 column-header-name"><p>Task Info</p></div>
+      <div className="col-2 column-header-work"><p>Work</p></div>
+      <div className="col-2 column-header-rest"><p>Rest</p></div>
+    </div>
     <ul className="task-list-ul">
       {
         task_list.length > 0

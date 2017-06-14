@@ -1,14 +1,72 @@
 .TaskListItem {
-	color: #999;
+  background: #f0ff8c;
+  border: 1px solid #a5acaf;
+  border-radius: 4px;
+	color: #111;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+  flex-direction: column;
+	align-items: flex-start;
+  padding: 6px 4px;
+  margin: 6px 8px;
 }
 
 .item-time {
 	display: flex;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+.item-time p {
+  margin-right: 2vmin;
 }
 
 .item-text {
 	display: flex;
+  text-align: left;
+}
+
+.item-break {
+	display: block;
+  text-align: center;
+  padding-right: 2vmin;
+}
+
+.task-list-item-top-row {
+  font-family: 'Avenir', sans-serif;
+  font-size: 2vmin;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.task-list-item-bottom-row {
+  font-family: sans-serif;
+  background: orangered;
+  font-size: 2vmin;
+  width: 100%;
+
+  transition: ease-in-out .6s all;
+}
+
+.reveal-notes-open {
+  height: auto;
+}
+
+.reveal-notes-close {
+  height: 0px;
+}
+
+button.item-notes-toggle {
+  font-size: 2.25vw;
+  height: 4vw;
+  margin: 0;
+  padding: .33vmin 1vmin;
+  font-family: 'aldrich', 'helvetica', sans-serif;
+}
+
+.item-notes-toggle-wrapper.col-3 {
+  padding: 0 2vmin;
+  margin: 0 auto;
 }

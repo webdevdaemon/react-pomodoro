@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 const AppWrapper = ({children, className}) => (
-  <div className={`AppWrapper wrapper ${className}`}>
+  <div className={`AppWrapper ${className}`}>
     { children }
   </div>
 )

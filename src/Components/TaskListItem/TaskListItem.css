@@ -6,7 +6,7 @@
 	display: flex;
 	justify-content: space-between;
   flex-direction: column;
-	align-items: flex-start;
+	align-items: flex-end;
   padding: 6px 4px;
   margin: 6px 8px;
 }
@@ -18,18 +18,63 @@
 }
 
 .item-time p {
-  margin-right: 2vmin;
+  margin: 0 1vw 0 0;
+  padding: 0;
 }
 
 .item-text {
 	display: flex;
+  margin: 0;
+  padding: 0;
   text-align: left;
+}
+
+.item-text p {
+  margin: 0;
+  padding: 0;
 }
 
 .item-break {
 	display: block;
-  text-align: center;
+  margin: 0;
+  padding: 0;
+  text-align: left;
   padding-right: 2vmin;
+}
+
+.item-break p {
+	/*display: block;*/
+  margin: 0;
+  padding: 0;
+  /*text-align: center;*/
+  /*padding-right: 2vmin;*/
+}
+
+.item-promote {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-promote button {
+  border: none;
+  border-radius: 6px;
+  display: block;
+  height: 100%;
+  max-height: 30px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.item-promote .plus {
+  background: limegreen;
+  margin: 0 0 2px 0;
+}
+
+.item-promote .minus {
+  background: cornflowerblue;
 }
 
 .task-list-item-top-row {
@@ -38,6 +83,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  padding: 0 8px 6px 8px;
   width: 100%;
 }
 
@@ -46,7 +92,6 @@
   background: orangered;
   font-size: 2vmin;
   width: 100%;
-
   transition: ease-in-out .6s all;
 }
 
@@ -58,15 +103,16 @@
   height: 0px;
 }
 
-button.item-notes-toggle {
-  font-size: 2.25vw;
-  height: 4vw;
-  margin: 0;
-  padding: .33vmin 1vmin;
+.item-notes-toggle {
+  font-size: 2vw;
+  height: auto;
+  margin: auto;
+  padding: .5vw;
   font-family: 'aldrich', 'helvetica', sans-serif;
 }
 
 .item-notes-toggle-wrapper.col-3 {
   padding: 0 2vmin;
-  margin: 0 auto;
+  margin: 0;
+  height: 100%;
 }

@@ -3,21 +3,35 @@ import './ControlPanel.css'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const INIT_CONTROL_PANEL_STATE = {
+const INITIAL_STATE = {
   name: '',
   notes: '',
   hours: 0,
   minutes: 0,
   rest_length: 5,
+  item_ID: null
 }
 
 class ControlPanel extends React.Component {
-  state = INIT_CONTROL_PANEL_STATE
+  state = INITIAL_STATE
   _onChange = (e, value = e.target.value, name = e.target.name) => {
     let updater = {
       [name]: value,
     }
     this.setState(updater)
+  }
+
+  _initState = () => {
+    this.setState(INITIAL_STATE, () => {console.log('ControlPanel state RE-INITIALIZED...')})
+  }
+
+  _getItemID = () => {
+    this.setState( { item_ID: this.props.createItemID() },
+      () => {
+        this.props.addTaskToList(this.state)
+        this._initState()
+      }
+    )
   }
 
   render() {
@@ -27,12 +41,9 @@ class ControlPanel extends React.Component {
           className="create-task-form container-fluid"
           name="create-task"
           id="create-task-form-id"
-          onSubmit={e => {
+          onSubmit={(e) => {
             e.preventDefault()
-            // let {name, notes, hours, minutes, rest_length} = this.state
-            this.props.addTaskToList(this.state) // SEND TO TASK LIST
-						// this.props.timerSetter(this.state) // SEND DIRECT TO TIMER FOR TESTING
-            this.setState({})
+            this._getItemID()
           }}
         >
           {/* INFO INFO INFO */}

@@ -63,9 +63,10 @@
 }
 
 .ControlPanel input[type='number'] {
-  font-family: 'Input', 'Roboto', sans-serif;
+  font-family: 'Nova Mono', 'Roboto', sans-serif;
   font-size: 5vmin;
   font-weight: 900;
+  padding: 0 0 0 16px;
 }
 
 /*INFO INPUTS*/
@@ -96,7 +97,7 @@
 
 #rest-length {
   background: aqua;
-  color: ##111;
+  color: #111;
 }
 
 /*SUBMIT TASK*/
@@ -145,7 +146,6 @@
 .ControlPanel .input-section.title.work.hours {
 	/*background: greenyellow;*/
   background: #444;
-	/*color: #111;*/
   color: #efefef;
 	font-size: 3vmin;
   margin: 0;
@@ -154,9 +154,7 @@
 }
 
 .ControlPanel .input-section.title.work.minutes {
-	/*background: greenyellow;*/
   background: #444;
-	/*color: #111;*/
   color: #efefef;
 	font-size: 3vmin;
   margin: 0;

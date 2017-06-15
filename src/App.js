@@ -77,32 +77,30 @@ class App extends Component {
         }
       }
     } else if (seconds === 0 && minutes === 0 && hours === 0) {
-      new_timer_obj = !this.state.rest
-				? {
-  is_running: true,
-  rest: true,
-  timer: {
-    seconds: 0,
-    minutes: this.state.rest_length,
-    hours: 0
-  }
-}
-				: {
-  is_running: false,
-  rest: false,
-  timer: {
-    seconds: 0,
-    minutes: 0,
-    hours: 0
-  }
-}
+      new_timer_obj = !this.state.rest ? {
+        is_running: true,
+        rest: true,
+        timer: {
+          seconds: 0,
+          minutes: this.state.rest_length,
+          hours: 0
+        }
+      } : {
+        is_running: false,
+        rest: false,
+        timer: {
+          seconds: 0,
+          minutes: 0,
+          hours: 0
+        }
+      }
     } else {
       return
     }
     return new_timer_obj
   }
 
-  _ticker = (start = false) => {
+  _ticker = (start) => {
     if (start) {
       window.interval = setInterval(() => {
         if (this.state.is_running) {

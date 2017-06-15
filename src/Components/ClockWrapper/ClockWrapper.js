@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import Button from '../Button/Button'
 
-const ClockWrapper = ({stateObject, timerToggler}) => (
+const ClockWrapper = ({stateObject, timerToggler}) =>
   <div className="ClockWrapper wrapper">
 
     <DigitalClockDisplay timer={stateObject.timer} is_running={stateObject.is_running} />
@@ -25,7 +25,6 @@ const ClockWrapper = ({stateObject, timerToggler}) => (
       />
     </div>
   </div>
-)
 
 ClockWrapper.propTypes = {
   stateObject: PropTypes.object.isRequired,

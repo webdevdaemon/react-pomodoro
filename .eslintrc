@@ -6,8 +6,13 @@
 		"node": true
 	},
 	"parserOptions": {
-		"ecmaversion": 7,
+		"ecmaversion": 8,
 		"ecmaFeatures": {
+      "defaultParams": true,
+      "destructuring": true,
+      "restParams": true,
+      "spread": true,
+      "arrowFunctions": true,
 			"experimentalObjectRestSpread": true,
 			"jsx": true
 		},
@@ -21,10 +26,10 @@
 		"linebreak-style": 0,
 		"no-console": 0,
 		"no-undef": 0,
-	  "indent": [1, 2],
-	  "react/jsx-closing-bracket-location": 1,
-	  "react/jsx-indent-props": [1, 2],
-	  "react/jsx-indent": [1, 2],
+	  "indent": "off",
+	  "react/jsx-closing-bracket-location": "off" ,
+	  "react/jsx-indent-props": "off",
+	  "react/jsx-indent": "off",
 		"semi": [2, "never"]
 	}
 }

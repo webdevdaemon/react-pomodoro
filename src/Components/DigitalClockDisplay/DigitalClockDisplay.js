@@ -11,14 +11,16 @@ class DigitalClockDisplay extends React.Component {
     this.state = {
       seconds_remaining: 0,
       minutes_remaining: 0,
-      hours_remaining: 0
+      hours_remaining:   0
     }
   }
 
   render() {
     return (
       <div>
-        <div className="container">{ this.props.children }</div>
+        <div className="container">
+          {this.props.children}
+        </div>
         <div className="DigitalClockDisplay">
           <DigitalClockColumn sectionLabel='hours' timeValue={this.props.timer.hours} />
           <Seperator />
@@ -31,12 +33,12 @@ class DigitalClockDisplay extends React.Component {
   }
 }
 DigitalClockDisplay.propTypes = {
-  timer: PropTypes.object,
+  timer:      PropTypes.object,
   is_running: PropTypes.bool,
-  children: PropTypes.node
+  children:   PropTypes.node
 }
 DigitalClockDisplay.defaultProps = {
-  timer: {hours: 1, minutes: 25, seconds: 0},
+  timer:      { hours: 1, minutes: 25, seconds: 0 },
   is_running: false
 }
 

@@ -1,350 +1,407 @@
 {
   "components": {
-  "App": {},
-  "AppWrapper": {
-    "attributes": [
-    "children"
-    ],
-    "props": {
-    "children": {
-      "type": {
-      "name": "any"
-      },
-      "required": false,
-      "description": ""
-    }
-    }
-  },
-  "Button": {
-    "attributes": [
-    "background",
-    "backgroundHover",
-    "color",
-    "colorHover",
-    "handler",
-    "labelOff",
-    "labelOn",
-    "size",
-    "style",
-    "toggledOn",
-    "isRunning"
-    ],
-    "props": {
-    "background": {
-      "type": {
-      "name": "string"
-      },
-      "required": true,
-      "description": "",
-      "defaultValue": {
-      "value": "'blue'",
-      "computed": false
+    "App": {},
+    "AppTitle": {},
+    "AppWrapper": {
+      "attributes": [
+        "children",
+        "className"
+      ],
+      "props": {
+        "children": {
+          "type": {
+            "name": "any"
+          },
+          "required": true,
+          "description": ""
+        },
+        "className": {
+          "type": {
+            "name": "string"
+          },
+          "required": true,
+          "description": ""
+        }
       }
     },
-    "backgroundHover": {
-      "type": {
-      "name": "string"
-      },
-      "required": false,
-      "description": "",
-      "defaultValue": {
-      "value": "'white'",
-      "computed": false
+    "Button": {
+      "attributes": [
+        "background",
+        "backgroundHover",
+        "color",
+        "colorHover",
+        "handler",
+        "labelOff",
+        "labelOn",
+        "size",
+        "style",
+        "toggledOn",
+        "isRunning"
+      ],
+      "props": {
+        "background": {
+          "type": {
+            "name": "string"
+          },
+          "required": true,
+          "description": "",
+          "defaultValue": {
+            "value": "'blue'",
+            "computed": false
+          }
+        },
+        "backgroundHover": {
+          "type": {
+            "name": "string"
+          },
+          "required": false,
+          "description": "",
+          "defaultValue": {
+            "value": "'white'",
+            "computed": false
+          }
+        },
+        "color": {
+          "type": {
+            "name": "string"
+          },
+          "required": true,
+          "description": "",
+          "defaultValue": {
+            "value": "'white'",
+            "computed": false
+          }
+        },
+        "colorHover": {
+          "type": {
+            "name": "string"
+          },
+          "required": false,
+          "description": "",
+          "defaultValue": {
+            "value": "'blue'",
+            "computed": false
+          }
+        },
+        "handler": {
+          "type": {
+            "name": "func"
+          },
+          "required": true,
+          "description": ""
+        },
+        "labelOff": {
+          "type": {
+            "name": "string"
+          },
+          "required": true,
+          "description": "",
+          "defaultValue": {
+            "value": "'Do It'",
+            "computed": false
+          }
+        },
+        "labelOn": {
+          "type": {
+            "name": "string"
+          },
+          "required": true,
+          "description": "",
+          "defaultValue": {
+            "value": "'Undo It'",
+            "computed": false
+          }
+        },
+        "size": {
+          "type": {
+            "name": "string"
+          },
+          "required": false,
+          "description": "",
+          "defaultValue": {
+            "value": "'small'",
+            "computed": false
+          }
+        },
+        "style": {
+          "type": {
+            "name": "object"
+          },
+          "required": false,
+          "description": ""
+        },
+        "toggledOn": {
+          "type": {
+            "name": "bool"
+          },
+          "required": true,
+          "description": ""
+        },
+        "isRunning": {
+          "defaultValue": {
+            "value": "false",
+            "computed": false
+          }
+        }
       }
     },
-    "color": {
-      "type": {
-      "name": "string"
-      },
-      "required": true,
-      "description": "",
-      "defaultValue": {
-      "value": "'white'",
-      "computed": false
+    "ClockWrapper": {
+      "attributes": [
+        "stateObject",
+        "timerToggler"
+      ],
+      "props": {
+        "stateObject": {
+          "type": {
+            "name": "object"
+          },
+          "required": true,
+          "description": ""
+        },
+        "timerToggler": {
+          "type": {
+            "name": "func"
+          },
+          "required": true,
+          "description": ""
+        }
       }
     },
-    "colorHover": {
-      "type": {
-      "name": "string"
-      },
-      "required": false,
-      "description": "",
-      "defaultValue": {
-      "value": "'blue'",
-      "computed": false
+    "ControlPanel": {
+      "attributes": [
+        "isRunning",
+        "onBreak",
+        "timerSetter",
+        "addTaskToList"
+      ],
+      "props": {
+        "isRunning": {
+          "type": {
+            "name": "bool"
+          },
+          "required": true,
+          "description": ""
+        },
+        "onBreak": {
+          "type": {
+            "name": "bool"
+          },
+          "required": true,
+          "description": ""
+        },
+        "timerSetter": {
+          "type": {
+            "name": "func"
+          },
+          "required": true,
+          "description": ""
+        },
+        "addTaskToList": {
+          "type": {
+            "name": "func"
+          },
+          "required": true,
+          "description": ""
+        }
       }
     },
-    "handler": {
-      "type": {
-      "name": "func"
-      },
-      "required": true,
-      "description": ""
-    },
-    "labelOff": {
-      "type": {
-      "name": "string"
-      },
-      "required": true,
-      "description": "",
-      "defaultValue": {
-      "value": "'Do It'",
-      "computed": false
+    "ControlWrapper": {
+      "attributes": [
+        "stateObject",
+        "timerSetter",
+        "className",
+        "addTaskToList",
+        "setTimerFromRest",
+        "createItemID"
+      ],
+      "props": {
+        "stateObject": {
+          "type": {
+            "name": "object"
+          },
+          "required": true,
+          "description": ""
+        },
+        "timerSetter": {
+          "type": {
+            "name": "func"
+          },
+          "required": true,
+          "description": ""
+        },
+        "className": {
+          "type": {
+            "name": "string"
+          },
+          "required": true,
+          "description": ""
+        },
+        "addTaskToList": {
+          "type": {
+            "name": "func"
+          },
+          "required": true,
+          "description": ""
+        },
+        "setTimerFromRest": {
+          "type": {
+            "name": "func"
+          },
+          "required": true,
+          "description": ""
+        },
+        "createItemID": {
+          "type": {
+            "name": "func"
+          },
+          "required": true,
+          "description": ""
+        }
       }
     },
-    "labelOn": {
-      "type": {
-      "name": "string"
-      },
-      "required": true,
-      "description": "",
-      "defaultValue": {
-      "value": "'Undo It'",
-      "computed": false
+    "DigitalClockColumn": {
+      "attributes": [
+        "timeValue",
+        "sectionLabel"
+      ],
+      "props": {
+        "timeValue": {
+          "type": {
+            "name": "node"
+          },
+          "required": false,
+          "description": "",
+          "defaultValue": {
+            "value": "0",
+            "computed": false
+          }
+        },
+        "sectionLabel": {
+          "type": {
+            "name": "string"
+          },
+          "required": false,
+          "description": ""
+        }
       }
     },
-    "size": {
-      "type": {
-      "name": "string"
-      },
-      "required": false,
-      "description": "",
-      "defaultValue": {
-      "value": "'small'",
-      "computed": false
+    "DigitalClockDisplay": {
+      "attributes": [
+        "timer",
+        "is_running",
+        "children"
+      ],
+      "props": {
+        "timer": {
+          "type": {
+            "name": "object"
+          },
+          "required": false,
+          "description": "",
+          "defaultValue": {
+            "value": "{hours: 1, minutes: 25, seconds: 0}",
+            "computed": false
+          }
+        },
+        "is_running": {
+          "type": {
+            "name": "bool"
+          },
+          "required": false,
+          "description": "",
+          "defaultValue": {
+            "value": "false",
+            "computed": false
+          }
+        },
+        "children": {
+          "type": {
+            "name": "node"
+          },
+          "required": false,
+          "description": ""
+        }
       }
     },
-    "style": {
-      "type": {
-      "name": "object"
-      },
-      "required": false,
-      "description": ""
-    },
-    "toggledOn": {
-      "type": {
-      "name": "bool"
-      },
-      "required": true,
-      "description": ""
-    },
-    "isRunning": {
-      "defaultValue": {
-      "value": "false",
-      "computed": false
-      }
-    }
-    }
-  },
-  "ClockWrapper": {
-    "attributes": [
-    "stateObject"
-    ],
-    "props": {
-    "stateObject": {
-      "type": {
-      "name": "object"
-      },
-      "required": true,
-      "description": ""
-    }
-    }
-  },
-  "ControlPanel": {
-    "attributes": [
-    "isRunning",
-    "onBreak",
-    "timerToggler",
-    "timerSetter",
-    "addTaskToList"
-    ],
-    "props": {
-    "isRunning": {
-      "type": {
-      "name": "bool"
-      },
-      "required": true,
-      "description": ""
-    },
-    "onBreak": {
-      "type": {
-      "name": "bool"
-      },
-      "required": true,
-      "description": ""
-    },
-    "timerToggler": {
-      "type": {
-      "name": "func"
-      },
-      "required": true,
-      "description": ""
-    },
-    "timerSetter": {
-      "type": {
-      "name": "func"
-      },
-      "required": true,
-      "description": ""
-    },
-    "addTaskToList": {
-      "type": {
-      "name": "func"
-      },
-      "required": true,
-      "description": ""
-    }
-    }
-  },
-  "ControlWrapper": {
-    "attributes": [
-    "stateObject",
-    "timerToggler",
-    "timerSetter",
-    "addTaskToList"
-    ],
-    "props": {
-    "stateObject": {
-      "type": {
-      "name": "object"
-      },
-      "required": false,
-      "description": ""
-    },
-    "timerToggler": {
-      "type": {
-      "name": "func"
-      },
-      "required": true,
-      "description": ""
-    },
-    "timerSetter": {
-      "type": {
-      "name": "func"
-      },
-      "required": true,
-      "description": ""
-    },
-    "addTaskToList": {
-      "type": {
-      "name": "func"
-      },
-      "required": true,
-      "description": ""
-    }
-    }
-  },
-  "DigitalClockColumn": {
-    "attributes": [
-    "timeValue",
-    "sectionLabel"
-    ],
-    "props": {
-    "timeValue": {
-      "type": {
-      "name": "node"
-      },
-      "required": false,
-      "description": "",
-      "defaultValue": {
-      "value": "0",
-      "computed": false
+    "Hero": {
+      "attributes": [
+        "children"
+      ],
+      "props": {
+        "children": {
+          "type": {
+            "name": "node"
+          },
+          "required": true,
+          "description": ""
+        }
       }
     },
-    "sectionLabel": {
-      "type": {
-      "name": "string"
-      },
-      "required": false,
-      "description": ""
-    }
-    }
-  },
-  "DigitalClockDisplay": {
-    "attributes": [
-    "timer",
-    "is_running"
-    ],
-    "props": {
-    "timer": {
-      "type": {
-      "name": "object"
-      },
-      "required": false,
-      "description": "",
-      "defaultValue": {
-      "value": "{hours: 1, minutes: 25, seconds: 0}",
-      "computed": false
+    "InputNumber": {},
+    "InputText": {},
+    "Seperator": {
+      "attributes": [
+        "displayState"
+      ],
+      "props": {
+        "displayState": {
+          "type": {
+            "name": "bool"
+          },
+          "required": false,
+          "description": ""
+        }
       }
     },
-    "is_running": {
-      "type": {
-      "name": "bool"
-      },
-      "required": false,
-      "description": "",
-      "defaultValue": {
-      "value": "false",
-      "computed": false
+    "TaskList": {
+      "attributes": [
+        "task_list"
+      ],
+      "props": {
+        "task_list": {
+          "type": {
+            "name": "array"
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    },
+    "TaskListItem": {
+      "attributes": [
+        "taskItem"
+      ],
+      "props": {
+        "taskItem": {
+          "type": {
+            "name": "object"
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    },
+    "TaskListWrapper": {
+      "attributes": [
+        "stateObject",
+        "className"
+      ],
+      "props": {
+        "stateObject": {
+          "type": {
+            "name": "object"
+          },
+          "required": false,
+          "description": ""
+        },
+        "className": {
+          "type": {
+            "name": "string"
+          },
+          "required": true,
+          "description": ""
+        }
       }
     }
-    }
-  },
-  "Seperator": {
-    "attributes": [
-    "displayState"
-    ],
-    "props": {
-    "displayState": {
-      "type": {
-      "name": "bool"
-      },
-      "required": false,
-      "description": ""
-    }
-    }
-  },
-  "TaskList": {
-    "attributes": [
-    "tasks"
-    ],
-    "props": {
-    "tasks": {
-      "type": {
-      "name": "array"
-      },
-      "required": true,
-      "description": ""
-    }
-    }
-  },
-  "TaskListItem": {
-    "attributes": [
-    "taskItem"
-    ],
-    "props": {
-    "taskItem": {
-      "type": {
-      "name": "object"
-      },
-      "required": true,
-      "description": ""
-    }
-    }
-  },
-  "TaskListWrapper": {
-    "attributes": [
-    "stateObject"
-    ],
-    "props": {
-    "stateObject": {
-      "type": {
-      "name": "object"
-      },
-      "required": false,
-      "description": ""
-    }
-    }
-  }
   }
 }

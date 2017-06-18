@@ -6,11 +6,13 @@
 		"babel-eslint": "^7.2.3",
 		"esformatter": "^0.10.0",
 		"esformatter-align": "^0.2.3",
+		"esformatter-collapse-objects": "^0.5.1",
 		"esformatter-jsx": "^8.0.0",
 		"esformatter-onevar": "^0.2.0-dev",
-		"eslint": "^3.19.0",
+		"eslint": "^4.0.0",
 		"eslint-config-airbnb": "^14.1.0",
 		"eslint-plugin-destructuring": "^2.1.0",
+		"eslint-plugin-es-beautifier": "^1.0.1",
 		"eslint-plugin-import": "^2.2.0",
 		"eslint-plugin-jsx-a11y": "^3.0.2",
 		"eslint-plugin-react": "^7.0.1",
@@ -28,6 +30,10 @@
 		"babel-preset-stage-0": "^6.24.1",
 		"bluebird": "^3.5.0",
 		"bootflat": "^2.0.4",
+		"es-strip-semicolons": "^1.0.9",
+		"esformatter-braces": "^1.2.1",
+		"esformatter-curly": "^0.0.2",
+		"esformatter-quotes": "^1.1.0",
 		"global": "^4.3.2",
 		"lodash": "^4.17.4",
 		"prettier-eslint": "^6.1.2",
@@ -37,14 +43,14 @@
 		"react-autocomplete-cli": "*",
 		"react-bootstrap": "^0.31.0",
 		"react-dom": "^15.5.4",
-		"react-icons": "^2.2.3",
+		"react-icons": "^2.2.5",
 		"react-redux": "^5.0.4",
 		"redux": "^3.6.0",
 		"tern": "^0.21.0"
 	},
-  "quokka": {
-    "babel": true
-  },
+	"quokka": {
+		"babel": true
+	},
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",

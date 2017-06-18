@@ -4,12 +4,19 @@ import ControlPanel from '../ControlPanel/index'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const ControlWrapper = props => (
+const ControlWrapper = (props) => (
   <div className={`ControlWrapper wrapper ${props.className}`}>
     <div className='control-panel-title'>
       <p>Create Task</p>
     </div>
-    <ControlPanel isRunning={props.stateObject.is_running} onBreak={props.stateObject.rest} timerSetter={props.timerSetter} addTaskToList={props.addTaskToList} setTimerFromRest={props.setTimerFromRest} createItemID={props.createItemID} />
+    <ControlPanel
+      isRunning={props.stateObject.is_running}
+      onBreak={props.stateObject.rest}
+      timerSetter={props.timerSetter}
+      addTaskToList={props.addTaskToList}
+      setTimerFromRest={props.setTimerFromRest}
+      createItemID={props.createItemID}
+    />
   </div>
 )
 

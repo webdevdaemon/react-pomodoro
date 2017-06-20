@@ -15,6 +15,8 @@ class TaskList extends React.Component {
     }
   }
 
+  /* eslint-disable */
+
   _promoteTask = (alpha_task) => {
     let new_list = this.state.task_list.reduce(( acc, item, dex ) => (
       item.position !== alpha_task.position

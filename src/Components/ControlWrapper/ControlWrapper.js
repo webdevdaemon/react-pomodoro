@@ -16,7 +16,7 @@ const ControlWrapper = (props) => (
       addTaskToList={props.addTaskToList}
       setTimerFromRest={props.setTimerFromRest}
       createItemID={props.createItemID}
-    />
+    s/>
   </div>
 )
 

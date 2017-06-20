@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import './App.css'
 
 import React, {Component} from 'react'
@@ -24,39 +25,35 @@ const INITIAL_STATE = {
 			hours: 0,
 			minutes: 1,
 			name: 'Test Task Item 1',
-			notes: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo qui, repudiandae e' +
-				'x sunt ducimus voluptate odio ipsum officia rerum dolor?',
-			rest_length: 5,
-			item_ID: 0
+			notes:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo qui, repudiandae ex sunt ducimus voluptate odio ipsum officia rerum dolor?',
+			rest_length: 5
 		},
 		{
 			hours: 1,
 			minutes: 2,
 			name: 'Test Task Item 2',
-			notes: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo qui, repudiandae e' +
-				'x sunt ducimus voluptate odio ipsum officia rerum dolor? Lorem ipsum dolor sit a' +
-				'met consectetur adipisicing elit. Illo qui, repudiandae ex sunt ducimus voluptat' +
-				'e odio ipsum officia rerum dolor?',
-			rest_length: 15,
-			item_ID: 1
+			notes:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo qui, repudiandae ex sunt ducimus voluptate odio ipsum officia rerum dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo qui, repudiandae ex sunt ducimus voluptate odio ipsum officia rerum dolor?',
+			rest_length: 15
 		},
 		{
 			hours: 0,
 			minutes: 30,
 			name: 'Test Task Item 3',
-			notes: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo qui, repudiandae e' +
-				'x sunt ducimus voluptate odio ipsum officia rerum dolor? Lorem ipsum dolor sit a' +
-				'met consectetur adipisicing elit. Illo qui, repudiandae ex sunt ducimus voluptat' +
-				'e odio ipsum officia rerum dolor?',
-			rest_length: 60,
-			item_ID: 2
+			notes:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo qui, repudiandae ex sunt ducimus voluptate odio ipsum officia rerum dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo qui, repudiandae ex sunt ducimus voluptate odio ipsum officia rerum dolor?',
+			rest_length: 60
 		}
 	],
 	task_current: null
 }
 
 class App extends Component {
-	state = INITIAL_STATE
+	constructor() {
+		super()
+		this.state = INITIAL_STATE
+	}
 
 	_timeKiller = ({hours, minutes, seconds}) => {
 		let new_timer_obj = {}
@@ -122,7 +119,9 @@ class App extends Component {
 			}, 1000)
 		} else {
 			clearInterval(window.interval)
-			this.setState({is_running: false})
+			this.setState({
+				is_running: false
+			})
 		}
 	}
 
@@ -182,15 +181,13 @@ class App extends Component {
 	}
 
 	_setTimerFromRest = () => {
-		this.setState((prevState, props) => {
-			return {
-				timer: {
-					hours: 0,
-					minutes: prevState.rest_length,
-					seconds: 0
-				}
+		this.setState((prevState, props) => ({
+			timer: {
+				hours: 0,
+				minutes: prevState.rest_length,
+				seconds: 0
 			}
-		})
+		}))
 	}
 
 	render() {

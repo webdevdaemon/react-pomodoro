@@ -8,11 +8,11 @@
 	"parserOptions": {
 		"ecmaversion": 8,
 		"ecmaFeatures": {
-      "defaultParams": true,
-      "destructuring": true,
-      "restParams": true,
-      "spread": true,
-      "arrowFunctions": true,
+      // "defaultParams": true,
+      // "destructuring": true,
+      // "restParams": true,
+      // "spread": true,
+      // "arrowFunctions": true,
 			"experimentalObjectRestSpread": true,
 			"jsx": true
 		},
@@ -20,6 +20,7 @@
 	},
 	"plugins": [
 		"react",
+    "react-app",
     "es-beautifier"
 	],
 	"rules": {
@@ -28,9 +29,10 @@
 		"no-console": 0,
 		"no-undef": 0,
 	  "indent": [0,2],
-	  "react/jsx-closing-bracket-location": "off" ,
+	  "react/jsx-closing-bracket-location": 0,
 	  "react/jsx-indent-props": [0,2],
 	  "react/jsx-indent": [0,2],
+    "react/jsx-no-undef": 0,
 		"semi": [2, "never"]
 	}
 }

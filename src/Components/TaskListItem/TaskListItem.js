@@ -32,7 +32,7 @@ class TaskListItem extends Component {
             </div>
           </div>
           <div className='item-notes-toggle-wrapper col-3'>
-            <button className='item-notes-toggle btn btn-danger btn-block'>
+            <button className='item-notes-toggle btn btn-danger btn-block' onClick={() => {this._notesToggler()}}  >
               See Notes
             </button>
           </div>
@@ -59,14 +59,14 @@ class TaskListItem extends Component {
             </button>
           </div>
           <div className='item-delete col-1'>
-            <button className='promote' onClick={() => {this.props.promoteTask()}}>
+            <button className='delete' onClick={() => {this.props.deleteTask(taskItem)}}>
               <FaClose />
             </button>
           </div>
         </div>
 
         <div className='task-list-item-bottom-row row no-gutters'>
-          <div className={  `item-notes`  }>
+          <div className={'item-notes reveal-notes-' + (taskItem.notes_open) ? 'open' : 'close'}>
             <p>
               {  taskItem.notes  }
             </p>
@@ -80,7 +80,8 @@ class TaskListItem extends Component {
 TaskListItem.propTypes = {
   taskItem: PropTypes.object.isRequired,
   position: PropTypes.number.isRequired,
-  promoteTask: PropTypes.func.isRequired
+  promoteTask: PropTypes.func.isRequired,
+  deleteTask: PropTypes.func.isRequired
 }
 
 TaskListItem.defaultProps = {}

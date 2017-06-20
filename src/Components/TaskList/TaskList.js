@@ -22,7 +22,12 @@ class TaskList extends React.Component {
         : [item].concat( acc )
     ), [])
     console.log(this.state.task_list, new_list)
-    this.setState({task_list: new_list}, () => {console.log('TASK_LIST updated')})
+    this.setState({task_list: new_list}, () => {console.log('TASK PROMOTED')})
+  }
+
+  _deleteTask = (omega_task) => {
+    let new_list = this.state.task_list.filter(item => item.position !== omega_task.position)
+    this.setState({task_list: new_list}, () => {console.log('TASK DELETED')} )
   }
 
   render() {
@@ -55,6 +60,7 @@ class TaskList extends React.Component {
                   key={ `T${ dex + 1 }` }
                   taskItem={ obj }
                   promoteTask={ this._promoteTask }
+                  deleteTask={ this._deleteTask }
                 />
               ))
               : <p className="no-tasks-msg">No Tasks in Queue...</p>

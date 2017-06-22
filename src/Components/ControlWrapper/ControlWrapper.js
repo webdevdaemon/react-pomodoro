@@ -10,6 +10,8 @@ const ControlWrapper = (props) => (
       <p>Create Task</p>
     </div>
     <ControlPanel
+      methods={ props.methods }
+      controlState={props.controlState}
       isRunning={props.stateObject.is_running}
       onBreak={props.stateObject.rest}
       timerSetter={props.timerSetter}
@@ -21,6 +23,8 @@ const ControlWrapper = (props) => (
 )
 
 ControlWrapper.propTypes = {
+  controlState: PropTypes.object.isRequired,
+  methods: PropTypes.object.isRequired,
   stateObject: PropTypes.object.isRequired,
   timerSetter: PropTypes.func.isRequired,
   className: PropTypes.string.isRequired,

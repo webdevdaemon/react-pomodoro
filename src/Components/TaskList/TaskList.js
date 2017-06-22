@@ -15,19 +15,6 @@ class TaskList extends Component {
 
   /* eslint-disable no-undef */
 
-  _promoteTask = (alpha_task) => {
-    let new_list = this.state.task_list.reduce((acc, item) => {
-      return (item.position !== alpha_task.position) ? acc.concat(item) : [item].concat(acc)
-    }, [])
-    console.log(this.state.task_list, new_list)
-    this.setState({task_list: new_list}, () => {console.log('TASK PROMOTED')})
-  }
-
-  _deleteTask = (omega_task) => {
-    let new_list = this.state.task_list.filter(item => item.position !== omega_task.position)
-    this.setState({task_list: new_list}, () => {console.log('TASK DELETED')} )
-  }
-
   render() {
     console.log('task_list => ', this.state.task_list)
 		return (
@@ -69,6 +56,7 @@ class TaskList extends Component {
 }
 
 TaskList.propTypes = {
+  methods: PropTypes.object.isRequired,
 	taskList: PropTypes.array.isRequired
 }
 

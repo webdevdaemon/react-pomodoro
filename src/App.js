@@ -160,21 +160,18 @@ class App extends Component {
 			{
 				task_list: task_list.slice(1),
 				task_current: current
-			},
-			() => {
-				this._timerSetter(
-					this.state.task_list.length === 0
-						? {
-								timer: {
-									hours: 0,
-									minutes: 0,
-									seconds: 0
-								},
-								is_running: false,
-								task_list: [],
-								task_current: {}
-							}
-						: this.state.task_current
+      }, () => {
+        this._timerSetter((this.state.task_list.length === 0) ?
+          {
+            timer: {
+              hours: 0,
+              minutes: 0,
+              seconds: 0
+            },
+            is_running: false,
+            task_list: [],
+            task_current: {}
+          } : this.state.task_current
 				)
 			}
 		)

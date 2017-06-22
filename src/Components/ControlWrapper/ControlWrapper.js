@@ -16,7 +16,7 @@ const ControlWrapper = (props) => (
       addTaskToList={props.addTaskToList}
       setTimerFromRest={props.setTimerFromRest}
       createItemID={props.createItemID}
-    s/>
+    />
   </div>
 )
 
@@ -25,8 +25,7 @@ ControlWrapper.propTypes = {
   timerSetter: PropTypes.func.isRequired,
   className: PropTypes.string.isRequired,
   addTaskToList: PropTypes.func.isRequired,
-  setTimerFromRest: PropTypes.func.isRequired,
-  createItemID: PropTypes.func.isRequired
+  setTimerFromRest: PropTypes.func.isRequired
 }
 
 ControlWrapper.defaultProps = {}

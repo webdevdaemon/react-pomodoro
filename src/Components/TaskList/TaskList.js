@@ -1,28 +1,24 @@
 import './TaskList.css'
 
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, {Component} from 'react'
 import TaskListItem from '../TaskListItem/TaskListItem'
 
-class TaskList extends React.Component {
+class TaskList extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      task_list: this.props.task_list.map(( task, dex ) => (
-        Object.assign(task, { position: dex + 1 })
-      ))
+      task_list: this.props.taskList
     }
   }
 
-  /* eslint-disable */
+  /* eslint-disable no-undef */
 
   _promoteTask = (alpha_task) => {
-    let new_list = this.state.task_list.reduce(( acc, item, dex ) => (
-      item.position !== alpha_task.position
-        ? acc.concat( item )
-        : [item].concat( acc )
-    ), [])
+    let new_list = this.state.task_list.reduce((acc, item) => {
+      return (item.position !== alpha_task.position) ? acc.concat(item) : [item].concat(acc)
+    }, [])
     console.log(this.state.task_list, new_list)
     this.setState({task_list: new_list}, () => {console.log('TASK PROMOTED')})
   }
@@ -33,6 +29,7 @@ class TaskList extends React.Component {
   }
 
   render() {
+    console.log('task_list => ', this.state.task_list)
 		return (
 			<div className="TaskList">
 				<div className="row no-gutters column-headers">
@@ -55,17 +52,15 @@ class TaskList extends React.Component {
 				</div>
 				<ul className="task-list-ul">
           {
-            (this.state.task_list.length > 0)
-              ? this.state.task_list.map((obj, dex) => (
+            (this.state.task_list.length > 0) ? this.state.task_list.map((item, dex) => (
                 <TaskListItem
                   position={ dex + 1 }
                   key={ `T${ dex + 1 }` }
-                  taskItem={ obj }
+                  taskItem={ item }
                   promoteTask={ this._promoteTask }
                   deleteTask={ this._deleteTask }
                 />
-              ))
-              : <p className="no-tasks-msg">No Tasks in Queue...</p>
+              )) : <p className="no-tasks-msg">No Tasks in Queue...</p>
           }
 				</ul>
 			</div>
@@ -74,7 +69,7 @@ class TaskList extends React.Component {
 }
 
 TaskList.propTypes = {
-	task_list: PropTypes.array.isRequired
+	taskList: PropTypes.array.isRequired
 }
 
 TaskList.defaultProps = {}

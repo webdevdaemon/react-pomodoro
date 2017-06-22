@@ -9,12 +9,12 @@ const TaskListWrapper = ({ stateObject, className }) => (
     <div className='task-list-title'>
       <p>My Tasks</p>
     </div>
-    <TaskList task_list={stateObject.task_list} />
+    <TaskList taskList={stateObject.task_list} />
   </div>
 )
 
 TaskListWrapper.propTypes = {
-	stateObject: PropTypes.object,
+	stateObject: PropTypes.object.isRequired,
 	className: PropTypes.string.isRequired
 }
 TaskListWrapper.defaultProps = {}

@@ -1,5 +1,7 @@
+/* eslint-disable no-undef */
+
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, {Component} from 'react'
 import './ControlPanel.css'
 
 const INITIAL_STATE = {
@@ -7,10 +9,11 @@ const INITIAL_STATE = {
 	notes: '',
 	hours: 0,
 	minutes: 0,
-	rest_length: 5
+  rest_length: 5,
+  position: null
 }
 
-class ControlPanel extends React.Component {
+class ControlPanel extends Component {
 	state = INITIAL_STATE
 
 	_onChange = (e, value = e.target.value, name = e.target.name) => {
@@ -33,11 +36,10 @@ class ControlPanel extends React.Component {
 					className="create-task-form container-fluid"
 					name="create-task"
 					id="create-task-form-id"
-					onSubmit={e => {
+          onSubmit={ (e) => {
 						e.preventDefault()
-						this.props.addTaskToList(this.state)
+            this.props.addTaskToList(this.state)
 						this._initState()
-						this.props.getNextTaskFromList()
 					}}
 				>
 					{/* INFO INFO INFO */}
@@ -93,7 +95,7 @@ class ControlPanel extends React.Component {
 										name="hours"
 										type="number"
 										placeholder="00"
-										value={(this.state.hours < 10) ? `0${this.state.hours}` : this.state.hours}
+										value={ (this.state.hours < 10) ? `0${this.state.hours}` : this.state.hours }
 										onChange={this._onChange}
 										id="task-hours"
 										min="0"
@@ -161,8 +163,7 @@ ControlPanel.propTypes = {
 	isRunning: PropTypes.bool.isRequired,
 	onBreak: PropTypes.bool.isRequired,
 	timerSetter: PropTypes.func.isRequired,
-	addTaskToList: PropTypes.func.isRequired,
-	createItemID: PropTypes.func.isRequired
+	addTaskToList: PropTypes.func.isRequired
 }
 
 ControlPanel.defaultProps = {}

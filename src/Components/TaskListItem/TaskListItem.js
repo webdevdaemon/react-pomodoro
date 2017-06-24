@@ -1,13 +1,18 @@
-/* eslint-disable no-undef */
-
 import './TaskListItem.css'
 
 import PropTypes from 'prop-types'
 import React from 'react'
 import FaClose from '../../fa/close'
 import FaAngleDoubleUp from '../../fa/angle-double-up'
+import ReactHtmlParser from 'react-html-parser'
 
-const TaskListItem = ({ taskItem, ...others }) => (
+const styles = {
+  OPEN:  { height: '100%', maxHeight: '140px', overflow: 'scroll' },
+  CLOSED: { height: '0', maxHeight: '0', overflow: 'hidden', padding: '0', border: 'none' },
+  BUTTON_DOWN: { background: '#a5acaf', border: 'inset 5px #666 ', color: 'black'}
+}
+
+const TaskListItem = (props) => (
 
   <li className='TaskListItem container-fluid'>
 
@@ -15,48 +20,55 @@ const TaskListItem = ({ taskItem, ...others }) => (
       <div className='item-text col-4'>
         <div className='item-name'>
           <p>
-            {taskItem.name}
+            {props.taskItem.name}
           </p>
         </div>
       </div>
       <div className='item-notes-toggle-wrapper col-3'>
-        <button className='item-notes-toggle btn btn-danger btn-block' onClick={() => {this._notesToggler()}}  >
-          See Notes
+        <button
+          className='item-notes-toggle btn btn-danger btn-block'
+          style={props.notesOpen ? styles.BUTTON_DOWN : null}
+          onClick={ (e) => { props.notesToggler(e, props.position) } }
+        >
+          { props.notesOpen ? 'Hide Notes' : 'View Notes' }
         </button>
       </div>
       <div className='item-time col-2'>
         <div className='item-hours'>
           <p>
-            {`${taskItem.hours} ${(taskItem.hours > 1) ? 'hrs' : 'hr'}`}
+            {`${props.taskItem.hours} h`}
           </p>
         </div>
         <div className='item-minutes'>
           <p>
-            {`${taskItem.minutes} ${(taskItem.minutes > 1) ? 'mins' : 'min' }`}
+            {`${props.taskItem.minutes} h`}
           </p>
         </div>
       </div>
       <div className='item-break col-1'>
         <p className=''>
-          {`${taskItem.rest_length} mins`}
+          {`${props.taskItem.rest_length} m`}
         </p>
       </div>
       <div className='item-promote col-1'>
-        <button className='promote' onClick={() => {this.props.promoteTask(taskItem.taskItem)}}>
+        <button className='promote' onClick={() => {props.promoteTask(props.taskItem)}}>
           <FaAngleDoubleUp />
         </button>
       </div>
       <div className='item-delete col-1'>
-        <button className='delete' onClick={() => {this.props.deleteTask(taskItem.taskItem)}}>
+        <button className='delete' onClick={() => {props.deleteTask(props.taskItem)}}>
           <FaClose />
         </button>
       </div>
     </div>
 
     <div className='task-list-item-bottom-row row no-gutters'>
-      <div className={'item-notes reveal-notes-' + (taskItem.notes_open) ? 'open' : 'close'}>
+      <div
+        className='item-notes'
+        style={(props.notesOpen) ? styles.OPEN : styles.CLOSED}
+      >
         <p>
-          {taskItem.notes}
+          { ReactHtmlParser(props.taskItem.notes.replace(/\n/gi, '<br />')) }
         </p>
       </div>
     </div>
@@ -67,7 +79,9 @@ TaskListItem.propTypes = {
   taskItem: PropTypes.object.isRequired,
   position: PropTypes.number.isRequired,
   promoteTask: PropTypes.func.isRequired,
-  deleteTask: PropTypes.func.isRequired
+  deleteTask: PropTypes.func.isRequired,
+  notesToggler: PropTypes.func.isRequired,
+  notesOpen: PropTypes.bool.isRequired
 }
 
 TaskListItem.defaultProps = {}

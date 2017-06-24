@@ -23,6 +23,7 @@
     "react-app",
     "es-beautifier"
 	],
+  "extends": "react-app",
 	"rules": {
 		"brace-style": 0,
 		"linebreak-style": 0,

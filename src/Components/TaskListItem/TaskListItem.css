@@ -1,8 +1,8 @@
 .TaskListItem {
-    background: #f0ff8c;
+    background: #444;
     border: 1px solid #a5acaf;
     border-radius: 4px;
-    color: #111;
+    color: azure;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -48,6 +48,11 @@
     padding: 0;
     /*text-align: center;*/
     /*padding-right: 2vmin;*/
+}
+
+.item-break p,
+.item-time {
+    padding: 0 0 0 1vw;
 }
 
 .item-promote {
@@ -112,7 +117,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 0 8px 6px 8px;
+    /*padding: 0 8px 6px 8px;*/
     width: 100%;
 }
 
@@ -121,22 +126,25 @@
     background: orangered;
     font-size: 2vmin;
     width: 100%;
-
 }
 
 .item-notes {
-    max-height: 300px;
+    max-height: 200px;
     overflow: scroll;
-    transition: ease-in-out .6s all;
+    transition: ease-in-out .75s all;
+    width: 100%;
+    text-align: left;
+    background: #f0ff8c;
+    color: #444;
+    font-size: 1.5vw;
+    line-height: 1.25;
+    font-family: 'avenir', sans-serif;
+    font-weight: bold;
+    padding: .25vw .5vw;
 }
 
-.reveal-notes-open {
-    height: 100%;
-
-}
-
-.reveal-notes-close {
-    height: 0;
+.item-notes p {
+    max-height: 125px;
 }
 
 .item-notes-toggle {

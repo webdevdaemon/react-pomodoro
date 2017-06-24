@@ -11,76 +11,77 @@ import Hero from './Components/Hero/index'
 import TaskListWrapper from './Components/TaskListWrapper/index'
 
 const control_panel_init = {
-    TASK: {
-      name: '',
-      notes: '',
-      hours: 0,
-      minutes: 0,
-      rest_length: 5,
-      notes_open: false,
-      position: undefined
-    }
-  },
-  app_state_init = {
-    timer: {
-      hours: 0,
-      minutes: 0,
-      seconds: 5
-    },
-    rest: false,
-    rest_length: 1,
-    is_running: false,
-    task_list: [
-      // testing purposes only
-      {
-        hours: 0,
-        minutes: 1,
-        name: 'Test Task Item 1',
-        notes:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo qui, repudiandae ex sunt ducimus voluptate odio ipsum officia rerum dolor?',
-        rest_length: 5
-      },
-      {
-        hours: 1,
-        minutes: 2,
-        name: 'Test Task Item 2',
-        notes:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo qui, repudiandae ex sunt ducimus voluptate odio ipsum officia rerum dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo qui, repudiandae ex sunt ducimus voluptate odio ipsum officia rerum dolor?',
-        rest_length: 15
-      },
-      {
-        hours: 0,
-        minutes: 30,
-        name: 'Test Task Item 3',
-        notes:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo qui, repudiandae ex sunt ducimus voluptate odio ipsum officia rerum dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo qui, repudiandae ex sunt ducimus voluptate odio ipsum officia rerum dolor?',
-        rest_length: 60
-      }
-    ],
-    task_current: null
-  },
-  source_of_truth = Object.assign({}, control_panel_init, app_state_init)
+	TASK: {
+		name: '',
+		notes: '',
+		hours: 0,
+		minutes: 0,
+		rest_length: 5,
+		notes_open: false,
+		position: null
+	}
+},
+	app_state_init = {
+		timer: {
+			hours: 0,
+			minutes: 0,
+			seconds: 5
+		},
+		rest: false,
+		rest_length: 1,
+		is_running: false,
+		task_list: [
+			// testing purposes only
+			{
+				hours: 0,
+				minutes: 1,
+				name: 'Test Task Item 1',
+				notes:
+					'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo qui, repudiandae ex sunt ducimus voluptate odio ipsum officia rerum dolor?',
+				rest_length: 5,
+        notes_open: false,
+        position: 0
+			},
+			{
+				hours: 1,
+				minutes: 2,
+				name: 'Test Task Item 2',
+				notes:
+					'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo qui, repudiandae ex sunt ducimus voluptate odio ipsum officia rerum dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo qui, repudiandae ex sunt ducimus voluptate odio ipsum officia rerum dolor?',
+				rest_length: 15,
+        notes_open: false,
+        position: 1
+			},
+			{
+				hours: 0,
+				minutes: 30,
+				name: 'Test Task Item 3',
+				notes:
+					'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo qui, repudiandae ex sunt ducimus voluptate odio ipsum officia rerum dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo qui, repudiandae ex sunt ducimus voluptate odio ipsum officia rerum dolor?',
+				rest_length: 60,
+        notes_open: false,
+        position: 2
+			}
+		],
+		task_current: null
+	},
+	source_of_truth = Object.assign({}, control_panel_init, app_state_init)
 
 class App extends Component {
-	constructor() {
-		super()
-    this.state = source_of_truth
-    console.log(this.state)
-    console.log({ visualize_app: this })
-  }
 
-  _onControlPanelChange = (e, value = e.target.value, name = e.target.name) => {
-    let updater = {
-      TASK: {
-        [name]: value
-      }
-    }
-    this.setState(updater)
-  }
+  state = source_of_truth
 
-  _ControlPanelInit = () => {
-    this.setState(control_panel_init)
-  }
+	_onControlPanelChange = (e, value = e.target.value, name = e.target.name) => {
+		let updater = {
+      TASK: Object.assign({}, this.state.TASK, { [name]: value })
+		}
+		this.setState(updater, () => console.log('RE-RENDERED: FORM INPUT'))
+	}
+
+	_controlPanelInit = () => {
+		this.setState(Object.assign({}, this.state, control_panel_init
+))
+	}
 
 	_timeKiller = ({hours, minutes, seconds}) => {
 		let new_timer_obj = {}
@@ -172,13 +173,17 @@ class App extends Component {
 		})
 	}
 
-	_addTaskToList = task_obj => {
-		this.setState((prevState, props) => {
-			console.log('TASK ADDED')
-			return {
-				task_list: prevState.task_list.concat([task_obj])
-			}
-		})
+  _addTaskToList = (task_item) => {
+    let t_l = this.state.task_list, new_list = [...t_l, task_item]
+    new_list = new_list.map((item, dex) => (
+      Object.assign({}, item, {position: dex})
+    ))
+    this.setState({ task_list: new_list },
+      () => {
+        console.log(t_l)
+        console.log(new_list)
+      }
+    )
 	}
 
 	_getNextTaskFromList = (task_list = this.state.task_list) => {
@@ -187,18 +192,21 @@ class App extends Component {
 			{
 				task_list: task_list.slice(1),
 				task_current: current
-      }, () => {
-        this._timerSetter((this.state.task_list.length === 0) ?
-          {
-            timer: {
-              hours: 0,
-              minutes: 0,
-              seconds: 0
-            },
-            is_running: false,
-            task_list: [],
-            task_current: {}
-          } : this.state.task_current
+			},
+			() => {
+				this._timerSetter(
+					this.state.task_list.length === 0
+						? {
+								timer: {
+									hours: 0,
+									minutes: 0,
+									seconds: 0
+								},
+								is_running: false,
+								task_list: [],
+								task_current: {}
+							}
+						: this.state.task_current
 				)
 			}
 		)
@@ -212,63 +220,80 @@ class App extends Component {
 				seconds: 0
 			}
 		}))
-  }
+	}
 
-  _promoteTask = (alpha_task) => {
-    let new_list = this.state.task_list.reduce((acc, item) => {
-      return (item.position !== alpha_task.position) ? acc.concat(item) : [item].concat(acc)
-    }, [])
-    console.log(this.state.task_list, new_list)
-    this.setState({task_list: new_list}, () => {console.log('TASK PROMOTED')})
-  }
+	_promoteTask = (alpha_task) => {
+		let new_list = this.state.task_list.reduce((acc, item) => {
+			return item.position !== alpha_task.position ? acc.concat(item) : [item].concat(acc)
+		}, [])
+		console.log(this.state.task_list, new_list)
+		this.setState({task_list: new_list}, () => {
+			console.log('TASK PROMOTED')
+		})
+	}
 
-  _deleteTask = (omega_task) => {
-    let new_list = this.state.task_list.filter(item => item.position !== omega_task.position)
-    this.setState({task_list: new_list}, () => {console.log('TASK DELETED')} )
-  }
+	_deleteTask = (omega_task) => {
+		let new_list = this.state.task_list.filter(item => item.position !== omega_task.position)
+		this.setState({task_list: new_list}, () => {
+			console.log('TASK DELETED')
+		})
+	}
 
-  render() {
-    const methods = {
-      onControlPanelChange: this._onControlPanelChange,
-      ControlPanelInit: this._init_control_panel,
-      timeKiller: this._timeKiller,
-      ticker: this._ticker,
-      timerToggler: this._timerToggler,
-      timerSetter: this._timerSetter,
-      addTaskToList: this._addTaskToList,
-      getNextTaskFromList: this._getNextTaskFromList,
-      setTimerFromRest: this._setTimerFromRest,
-      promoteTask: this._promoteTask,
-      deleteTask: this._deleteTask
-    }
-    console.log(methods)
+  _notesToggler = (e, target_pos) => {
+    // console.log('e, e.target  = \n', e, e.target)
+    // console.log('target :  \n',target_pos)
+    // console.table(e, e.target)
+    let task_list = this.state.task_list.map((item) => (
+      (item.position === target_pos)
+        ? Object.assign({}, item, { notes_open: !item.notes_open })
+        : item
+    ))
+    console.log('tasklist :  ',task_list)
+    this.setState({ task_list }, () => {
+      console.log('NOTES TOGGLED!!!')
+    })
+	}
+
+	render() {
+		const methods = {
+			onControlPanelChange: this._onControlPanelChange,
+			controlPanelInit: this._controlPanelInit,
+			timeKiller: this._timeKiller,
+			ticker: this._ticker,
+			timerToggler: this._timerToggler,
+			timerSetter: this._timerSetter,
+			addTaskToList: this._addTaskToList,
+			getNextTaskFromList: this._getNextTaskFromList,
+			setTimerFromRest: this._setTimerFromRest,
+			promoteTask: this._promoteTask,
+      deleteTask: this._deleteTask,
+      notesToggler: this._notesToggler
+		}
+		console.log(methods)
 
 		return (
 			<div className="App container-fluid">
 				<AppTitle className="row no-gutters" stateObject={this.state} />
 				<Hero className="row no-gutters">
-          <ClockWrapper
-            methods={methods}
+					<ClockWrapper
+						methods={methods}
 						className="col-12"
 						stateObject={this.state}
 						timerToggler={this._timerToggler}
 					/>
 				</Hero>
 				<AppWrapper className="row no-gutters d-xs-flex-column d-sm-flex-row">
-          <ControlWrapper
-            methods={methods}
-            controlState={this.state.TASK}
+					<ControlWrapper
+						methods={methods}
+						controlState={this.state.TASK}
             className="col-12"
+            taskList={this.state.task_list}
 						stateObject={this.state}
-						timerSetter={this._timerSetter}
-						addTaskToList={this._addTaskToList}
-						setTimerFromRest={this._setTimerFromRest}
+						// timerSetter={this._timerSetter}
+						// addTaskToList={this._addTaskToList}
+						// setTimerFromRest={this._setTimerFromRest}
 					/>
-          <TaskListWrapper
-            methods={methods}
-            className="col-12"
-            stateObject={this.state}
-          />
+					<TaskListWrapper methods={methods} className="col-12" stateObject={this.state} taskList={this.state.task_list} />
 				</AppWrapper>
 			</div>
 		)

@@ -1,0 +1,29 @@
+.DisplayTaskTitle {
+    background: greenyellow;
+    color: cornflowerblue;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    font-size: 3vw;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    /*text-decoration: underline;*/
+    width: 100%;
+}
+
+.DisplayTaskTitle p {
+    margin: 0;
+    padding: 0;
+}
+
+.DisplayTaskTitle .task-title-label {
+  font-family: 'Baloo', 'Avenir', monospace;
+  margin: 0 2vw 0 0;
+  font-size: 2.5vw;
+}
+
+.DisplayTaskTitle .task-title {
+  font-family: 'Aldrich', 'Helvetica', sans-serif;
+  font-size: 2.5vw;
+}

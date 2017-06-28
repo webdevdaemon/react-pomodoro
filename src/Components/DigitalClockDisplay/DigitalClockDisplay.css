@@ -4,11 +4,12 @@
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
+  margin: 0 0 -2vw 0;
 }
 
 .clock-display-label {
   font-family: 'aldrich';
-  font-size: 4vmin;
+  font-size: 3vmin;
 	margin: 0;
 	padding: 4px 0 2px 0;
 }

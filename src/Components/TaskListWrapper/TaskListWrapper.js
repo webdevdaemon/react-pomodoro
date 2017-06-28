@@ -27,11 +27,13 @@ const TaskListWrapper = (props) => (
     </TaskList>
 	</div>
 )
+
 TaskListWrapper.propTypes = {
 	className: PropTypes.string.isRequired,
 	methods: PropTypes.object.isRequired,
   taskList: PropTypes.array
 }
+
 TaskListWrapper.defaultProps = {}
 
 export default TaskListWrapper

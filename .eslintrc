@@ -8,11 +8,6 @@
 	"parserOptions": {
 		"ecmaversion": 8,
 		"ecmaFeatures": {
-      // "defaultParams": true,
-      // "destructuring": true,
-      // "restParams": true,
-      // "spread": true,
-      // "arrowFunctions": true,
 			"experimentalObjectRestSpread": true,
 			"jsx": true
 		},

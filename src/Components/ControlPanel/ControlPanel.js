@@ -28,7 +28,6 @@ const ControlPanel = (props) => (
 							value={props.controlState.name}
 							onChange={props.methods.onControlPanelChange}
 							id="task-name"
-							required
 						/>
 					</div>
 				</div>

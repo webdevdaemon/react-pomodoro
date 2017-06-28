@@ -17,13 +17,13 @@
 .timer-toggle-wrap button {
 	background: limegreen;
 	color: white;
-	font-size: 8vmin;
+	font-size: 4vw;
   padding: 6px 0 0 0;
   text-shadow: 3px 3px 1px #111;
 }
 
 #timer-toggle {
-  border-radius: 0;
-	/*box-shadow: 0 0 15px yellow;*/
+  border-radius: 1vw;
+	box-shadow: 0 0 15px yellow;
 	font-family: 'Baloo', 'Roboto', 'sans-serif';
 }

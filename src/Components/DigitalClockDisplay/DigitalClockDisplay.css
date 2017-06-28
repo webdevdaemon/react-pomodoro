@@ -2,49 +2,57 @@
 	background: transparent;
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
+  margin: 0 0 -2vw 0;
 }
+
 .clock-display-label {
+  font-family: 'aldrich';
+  font-size: 3vmin;
 	margin: 0;
-	padding: 0;
+	padding: 4px 0 2px 0;
 }
+
 .clock-display-label.hours {
 	background: orangered;
-	box-shadow: 0 0 10px orangered;
+	box-shadow: 0 0 15px orange;
 	border-radius: 5px;
-	font-size: 2vmin;
+	/*font-size: 2vmin;*/
 }
+
 .clock-display-label.minutes {
-	background: royalblue;
-	box-shadow: 0 0 10px royalblue;
+	background: cornflowerblue;
+	box-shadow: 0 0 15px cornflowerblue;
 	border-radius: 5px;
-	font-size: 2vmin;
+	/*font-size: 2vmin;*/
 }
+
 .clock-display-label.seconds {
 	background: greenyellow;
-	box-shadow: 0 0 10px greenyellow;
+	box-shadow: 0 0 15px yellow;
 	border-radius: 5px;
-	font-size: 2vmin;
+	/*font-size: 2vmin;*/
 }
 
 .clock-display {
-	margin: 0;
+  margin: -3vw 0 -6vw 0;
+	font-family: 'Digital-7Mono', 'Baloo', 'Roboto', 'sans-serif';
 }
 
 .clock-display.hours {
 	color: orangered;
-	text-shadow: 0 0 10px orangered;
+	text-shadow: 0 0 10px orange;
 }
 
 .clock-display.minutes {
-	color: royalblue;
-	text-shadow: 0 0 10px royalblue;
+	color: cornflowerblue;
+	text-shadow: 0 0 10px cornflowerblue;
 }
 
 .clock-display.seconds {
 	color: greenyellow;
-	text-shadow: 0 0 10px greenyellow;
+	text-shadow: 0 0 10px yellow;
 }
 
 .seperator-wrapper {

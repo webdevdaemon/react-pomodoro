@@ -1,11 +1,13 @@
 .App {
-  background: #222;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  font-family: 'Baloo', 'Roboto', 'sans-serif';
+  height: auto;
+  min-height: 100vh;
+  max-width: 1400px;
+  width: 100%;
   text-align: center;
-  width: 97%;
-  margin: auto;
+}
+
+.wrapper {
+  background: transparent;
+  margin-bottom: 2vmin;
 }

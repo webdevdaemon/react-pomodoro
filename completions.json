@@ -1,16 +1,25 @@
 {
   "components": {
     "App": {},
+    "AppTitle": {},
     "AppWrapper": {
       "attributes": [
-        "children"
+        "children",
+        "className"
       ],
       "props": {
         "children": {
           "type": {
             "name": "any"
           },
-          "required": false,
+          "required": true,
+          "description": ""
+        },
+        "className": {
+          "type": {
+            "name": "string"
+          },
+          "required": true,
           "description": ""
         }
       }
@@ -138,12 +147,20 @@
     },
     "ClockWrapper": {
       "attributes": [
-        "stateObject"
+        "stateObject",
+        "timerToggler"
       ],
       "props": {
         "stateObject": {
           "type": {
             "name": "object"
+          },
+          "required": true,
+          "description": ""
+        },
+        "timerToggler": {
+          "type": {
+            "name": "func"
           },
           "required": true,
           "description": ""
@@ -154,7 +171,6 @@
       "attributes": [
         "isRunning",
         "onBreak",
-        "timerToggler",
         "timerSetter",
         "addTaskToList"
       ],
@@ -169,13 +185,6 @@
         "onBreak": {
           "type": {
             "name": "bool"
-          },
-          "required": true,
-          "description": ""
-        },
-        "timerToggler": {
-          "type": {
-            "name": "func"
           },
           "required": true,
           "description": ""
@@ -199,21 +208,15 @@
     "ControlWrapper": {
       "attributes": [
         "stateObject",
-        "timerToggler",
         "timerSetter",
-        "addTaskToList"
+        "className",
+        "addTaskToList",
+        "setTimerFromRest"
       ],
       "props": {
         "stateObject": {
           "type": {
             "name": "object"
-          },
-          "required": false,
-          "description": ""
-        },
-        "timerToggler": {
-          "type": {
-            "name": "func"
           },
           "required": true,
           "description": ""
@@ -225,7 +228,21 @@
           "required": true,
           "description": ""
         },
+        "className": {
+          "type": {
+            "name": "string"
+          },
+          "required": true,
+          "description": ""
+        },
         "addTaskToList": {
+          "type": {
+            "name": "func"
+          },
+          "required": true,
+          "description": ""
+        },
+        "setTimerFromRest": {
           "type": {
             "name": "func"
           },
@@ -263,7 +280,8 @@
     "DigitalClockDisplay": {
       "attributes": [
         "timer",
-        "is_running"
+        "is_running",
+        "children"
       ],
       "props": {
         "timer": {
@@ -273,7 +291,7 @@
           "required": false,
           "description": "",
           "defaultValue": {
-            "value": "{hours: 1, minutes: 25, seconds: 0}",
+            "value": "{ hours: 1, minutes: 25, seconds: 0 }",
             "computed": false
           }
         },
@@ -287,9 +305,32 @@
             "value": "false",
             "computed": false
           }
+        },
+        "children": {
+          "type": {
+            "name": "node"
+          },
+          "required": false,
+          "description": ""
         }
       }
     },
+    "Hero": {
+      "attributes": [
+        "children"
+      ],
+      "props": {
+        "children": {
+          "type": {
+            "name": "node"
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    },
+    "InputNumber": {},
+    "InputText": {},
     "Seperator": {
       "attributes": [
         "displayState"
@@ -306,10 +347,10 @@
     },
     "TaskList": {
       "attributes": [
-        "tasks"
+        "taskList"
       ],
       "props": {
-        "tasks": {
+        "taskList": {
           "type": {
             "name": "array"
           },
@@ -320,7 +361,10 @@
     },
     "TaskListItem": {
       "attributes": [
-        "taskItem"
+        "taskItem",
+        "position",
+        "promoteTask",
+        "deleteTask"
       ],
       "props": {
         "taskItem": {
@@ -329,19 +373,48 @@
           },
           "required": true,
           "description": ""
+        },
+        "position": {
+          "type": {
+            "name": "number"
+          },
+          "required": true,
+          "description": ""
+        },
+        "promoteTask": {
+          "type": {
+            "name": "func"
+          },
+          "required": true,
+          "description": ""
+        },
+        "deleteTask": {
+          "type": {
+            "name": "func"
+          },
+          "required": true,
+          "description": ""
         }
       }
     },
     "TaskListWrapper": {
       "attributes": [
-        "stateObject"
+        "stateObject",
+        "className"
       ],
       "props": {
         "stateObject": {
           "type": {
             "name": "object"
           },
-          "required": false,
+          "required": true,
+          "description": ""
+        },
+        "className": {
+          "type": {
+            "name": "string"
+          },
+          "required": true,
           "description": ""
         }
       }

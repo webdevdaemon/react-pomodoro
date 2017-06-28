@@ -1,4 +1,19 @@
 .TaskListWrapper {
-	background: #5ee;
-	display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 4px 4px 8px 8px;
+  overflow: hidden;
+}
+
+.task-list-title {
+  background: orangered;
+  color: #efefef;
+  font-size: 5vmin;
+  text-shadow: 3px 3px 1px #111;
+}
+
+.task-list-title p {
+  margin: 0;
+  padding: 0;
 }

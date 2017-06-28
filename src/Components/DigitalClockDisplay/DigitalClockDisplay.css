@@ -9,7 +9,7 @@
 
 .clock-display-label {
   font-family: 'aldrich';
-  font-size: 3vmin;
+  font-size: 4vmin;
 	margin: 0;
 	padding: 4px 0 2px 0;
 }
@@ -18,7 +18,6 @@
 	background: orangered;
 	box-shadow: 0 0 15px orange;
 	border-radius: 5px;
-	/*font-size: 2vmin;*/
 }
 
 .clock-display-label.minutes {

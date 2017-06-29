@@ -13,7 +13,7 @@ const ClockWrapper = ({stateObject, timerToggler}) => (
 		</div>
 		<div className="row col-12 no-gutters timer-toggle-wrap">
 			<Button
-				className="button-timer-toggle btn btn-success btn-block"
+        className='button-timer-toggle btn btn-success btn-block'
         toggledOn={ stateObject.is_running }
         rest={ stateObject.rest }
         done={ stateObject.task_done }

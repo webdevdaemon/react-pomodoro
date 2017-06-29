@@ -1,20 +1,20 @@
 .ControlPanel {
-	background: azure;
+	background: #474748;
   border-radius: 0 0 12px 12px;
-	color: #efefef;
+	color: white;
 	display: block;
 }
 
 /*TITLE*/
 
 .control-panel-title {
-  background: cornflowerblue;
+  background: #a5acaf;
   border-radius: 4px 4px 0 0;
-  color: #efefef;
+  color: white;
 }
 
 .control-panel-title p {
-  color: #efefef;
+  color: white;
   font-size: 3vmin;
   margin: 0;
   padding: 0;
@@ -106,7 +106,7 @@
   background: limegreen;
   border: none;
   border-radius: 8px;
-  color: #efefef;
+  color: white;
   font-family: 'Baloo', 'Roboto', 'sans-serif';
   font-size: 4vmin;
   margin: 0;
@@ -134,9 +134,8 @@
 
 .ControlPanel .input-section.title.rest {
   /*background: cornflowerblue;*/
-  background: #444;
-  /*color: #efefef;*/
-  color: #efefef;
+  background: #a5acaf;
+  color: white;
   font-size: 3vmin;
   margin: 0;
   padding: 0;
@@ -145,8 +144,8 @@
 
 .ControlPanel .input-section.title.work.hours {
 	/*background: greenyellow;*/
-  background: #444;
-  color: #efefef;
+  background: #a5acaf;
+  color: white;
 	font-size: 3vmin;
   margin: 0;
   padding: 0;
@@ -154,8 +153,8 @@
 }
 
 .ControlPanel .input-section.title.work.minutes {
-  background: #444;
-  color: #efefef;
+  background: #a5acaf;
+  color: white;
 	font-size: 3vmin;
   margin: 0;
   padding: 0;
@@ -167,15 +166,4 @@
   border-radius: 4px 4px 8px 8px;
   overflow: hidden;
   margin-top: 1vmin;
-}
-
-.time-input,
-.ControlPanel form .task-time-inputs input {
-
-}
-
-.col-4.row,
-.col-8.row.work-control,
-.task-time-inputs.row {
-
 }

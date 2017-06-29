@@ -41,7 +41,7 @@ const TaskListItem = (props) => (
         </div>
         <div className='item-minutes'>
           <p>
-            {`${props.taskItem.minutes} h`}
+            {`${props.taskItem.minutes} m`}
           </p>
         </div>
       </div>

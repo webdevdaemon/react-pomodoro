@@ -17,10 +17,9 @@ const Button = props => (
         ? (props.toggledOn ? styles.REST_TIMER_ON : styles.REST_TIMER_OFF)
         : (props.toggledOn ? styles.TASK_TIMER_ON : styles.TASK_TIMER_OFF)
     }
-		className="Button btn"
-		id="timer-toggle"
+    className={`${!props.toggledOn && `timer-toggle-animated`} Button btn timer-toggle`}
 		onClick={props.handler}
-	>
+	><p>
     {
       props.done
         ? props.labelNext
@@ -29,7 +28,8 @@ const Button = props => (
             ? props.labelRest
             : (props.toggledOn ? props.labelOn : props.labelOff)
         )
-    }
+      }
+    </p>
   </button>
 )
 

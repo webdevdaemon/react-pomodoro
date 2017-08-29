@@ -5,8 +5,8 @@
 ul.task-list-ul {
   border-radius: 8px;
   list-style: none;
-  margin: 2vw 1vw;
-  padding: .5vw 0;
+  margin: 2vmin 1vmin;
+  padding: .5vmin 0;
   background: #a5acaf;
 }
 
@@ -30,7 +30,12 @@ p.no-tasks-msg {
   padding-left: 2vw;
 }
 
-.column-header-name {
+.column-header-notes p {
+  margin: 0;
+  padding: 0;
+}
+
+/*.column-header-name {
   text-align: left;
 }
 
@@ -40,7 +45,7 @@ p.no-tasks-msg {
 
 .column-header-rest {
   text-align: left;
-}
+}*/
 
 .column-header-name p {
   padding: 0 0 0 1vmin;

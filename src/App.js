@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import './App.css'
 import React, { Component } from 'react'
 import AppTitle from './Components/AppTitle/index'
@@ -95,9 +96,8 @@ class App extends Component {
 
   _getNextTaskFromList = (task_list = this.state.task_list.slice()) => {
     let current = task_list[0] || null
-    this.setState({task_list: task_list.slice(1), task_current: current}, () => {
-      this._timerSetter(this.state.task_list.length === 0 ? app_state_init : this.state.task_current)
-    })
+    this.setState({task_list: task_list.slice(1), task_current: current},
+      () => {this._timerSetter(this.state.task_list.length === 0 ? app_state_init : this.state.task_current)})
   }
 
   _setTimerFromRest = () => {
@@ -138,27 +138,17 @@ class App extends Component {
       notesToggler: this._notesToggler
     }
 
-    return (
-      <div className='App container-fluid'>
-              <AppTitle className='row no-gutters' stateObject={this.state} />
-              <Hero className='row no-gutters'>
-                <ClockWrapper methods={methods} stateObject={this.state} timerToggler={this._timerToggler} />
-              </Hero>
-              <AppWrapper className='row no-gutters d-xs-flex-column d-sm-flex-row'>
-                <ControlWrapper
-                      methods={methods}
-                      controlState={this.state.TASK}
-                      taskList={this.state.task_list}
-                      stateObject={this.state}
-                    />
-                <TaskListWrapper
-                      methods={methods}
-                      className='col-12'
-                      stateObject={this.state}
-                      taskList={this.state.task_list}
-                    />
-              </AppWrapper>
-            </div>
+  return (
+    <div className='App container-fluid'>
+      <AppTitle className='row no-gutters' stateObject={this.state} />
+      <Hero className='row no-gutters'>
+        <ClockWrapper methods={methods} stateObject={this.state} timerToggler={this._timerToggler} />
+      </Hero>
+      <AppWrapper className='row no-gutters d-xs-flex-column d-sm-flex-row'>
+        <ControlWrapper methods={methods} controlState={this.state.TASK} taskList={this.state.task_list} stateObject={this.state}/>
+        <TaskListWrapper methods={methods} className='col-12' stateObject={this.state} taskList={this.state.task_list} />
+      </AppWrapper>
+    </div>
     )
   }
 }

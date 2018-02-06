@@ -21,8 +21,7 @@
     "plugins": [
         "react",
         "react-app",
-        "es-beautifier",
-        "prettier-eslint"
+        "es-beautifier"
     ],
     "extends": "react-app",
     "rules": {

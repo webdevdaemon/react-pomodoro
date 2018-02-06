@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+// eslint-disable no-undef
 import "./App.css"
 
 import React, { Component } from "react"

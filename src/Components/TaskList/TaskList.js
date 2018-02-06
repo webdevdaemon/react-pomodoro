@@ -23,7 +23,7 @@ const TaskList = ({taskList, ...props}) =>
       </div>
 		</div>
     <ul className="task-list-ul">
-      { props.children }
+      {props.children}
 		</ul>
 	</div>
 

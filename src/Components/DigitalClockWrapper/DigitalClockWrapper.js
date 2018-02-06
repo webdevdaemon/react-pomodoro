@@ -1,13 +1,13 @@
-import './ClockWrapper.css'
+import './DigitalClockWrapper.css'
 
-import DigitalClockDisplay from '../DigitalClockDisplay/index'
 import PropTypes from 'prop-types'
 import React from 'react'
+import DigitalClockDisplay from '../DigitalClockDisplay/index'
 import DisplayTaskTitle from '../DisplayTaskTitle/DisplayTaskTitle'
 import Button from '../Button/Button'
 
-const ClockWrapper = ({stateObject, timerToggler}) => (
-	<div className="ClockWrapper wrapper">
+const DigitalClockWrapper = ({stateObject, timerToggler}) => (
+	<div className="DigitalClockWrapper wrapper">
 		<DigitalClockDisplay timer={stateObject.timer} is_running={stateObject.is_running} />
 		<div className="row col-12 no-gutters timer-task-title-wrap">
 		</div>
@@ -41,10 +41,10 @@ const ClockWrapper = ({stateObject, timerToggler}) => (
 		</div>
 	</div>
 )
-ClockWrapper.propTypes = {
+DigitalClockWrapper.propTypes = {
 	stateObject: PropTypes.object.isRequired,
 	timerToggler: PropTypes.func.isRequired
 }
-ClockWrapper.default = {}
+DigitalClockWrapper.default = {}
 
-export default ClockWrapper
+export default DigitalClockWrapper

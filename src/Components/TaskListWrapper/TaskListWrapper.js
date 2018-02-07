@@ -4,12 +4,11 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import TaskList from '../TaskList/index'
 import TaskListItem from '../TaskListItem/TaskListItem'
+import PanelTitle from '../PanelTitle/PanelTitle'
 
 const TaskListWrapper = (props) => (
 	<div className={`TaskListWrapper wrapper ${props.className}`}>
-		<div className="task-list-title">
-			<p>My Tasks</p>
-		</div>
+		<PanelTitle dashedClassPrefix='task-list' title='My Tasks'/>
     <TaskList taskList={props.taskList}>
       {props.taskList.length > 0
         ? props.taskList.map((item, dex) => (

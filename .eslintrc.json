@@ -18,18 +18,32 @@
         },
         "sourceType": "module"
     },
-    "plugins": [
-        "react",
-        "react-app",
-        "es-beautifier"
-    ],
+    "plugins": ["env", "react", "react-app"],
     "extends": "react-app",
     "rules": {
-        "brace-style": 0,
+        "brace-style": [0, "1tbs", {"allowSingleLine": true}],
         "linebreak-style": 0,
         "no-console": 0,
         "no-undef": 0,
-        "indent": [0, 2],
+        "no-unused-vars": 0,
+        "quotes": ["error", "single", {"allowTemplateLiterals": true}],
+        "indent": [0, 2, {
+            "ImportDeclaration": 4,
+            "flatTernaryExpressions": false,
+            "ObjectExpression": 2,
+            "ArrayExpression": 2,
+            "SwitchCase": 1,
+            "CallExpression": {
+              "arguments": "first"
+            },
+            "VariableDeclarator": {
+              "var": 2,
+              "let": 2,
+              "const": 3
+            }
+          }
+        ],
+        "semi": [2, "never"],
         "react/jsx-closing-bracket-location": 0,
         "react/jsx-indent-props": [0, 2],
         "react/jsx-indent": [0, 2],

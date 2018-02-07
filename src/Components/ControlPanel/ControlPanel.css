@@ -1,17 +1,17 @@
 .ControlPanel {
-	background: #474748;
-  border-radius: 0 0 12px 12px;
+	background: transparent;
+  /* border-radius: 0 0 12px 12px; */
 	color: white;
 	display: block;
 }
 
 /*TITLE*/
 
-.control-panel-title {
+/* .control-panel-title {
   background: #a5acaf;
   border-radius: 4px 4px 0 0;
   color: white;
-}
+} */
 
 .control-panel-title p {
   color: white;
@@ -25,8 +25,8 @@
 
 .ControlPanel form {
   background: transparent;
-  padding-top: 2vmin;
-  padding-bottom: 2vmin;
+  padding-top: 1vh;
+  padding-bottom: 2vh;
 }
 
 .ControlPanel input[type='text'],

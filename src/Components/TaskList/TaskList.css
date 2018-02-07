@@ -1,13 +1,13 @@
 .TaskList {
-	background: #474748;
+	/* background: #474748; */
 }
 
-ul.task-list-ul {
+.task-list-ul {
   border-radius: 8px;
   list-style: none;
-  margin: 2vw 1vw;
+  margin: 1vh 1vw;
   padding: .5vw 0;
-  background: #a5acaf;
+  /* background: #a5acaf; */
 }
 
 p.no-tasks-msg {
@@ -19,9 +19,14 @@ p.no-tasks-msg {
 }
 
 .column-headers {
-  background:white;
-  color: black;
-  font-size: 2vmin;
+	/* 076 Premium Dark: */
+	background-image: -webkit-linear-gradient(351deg, #000000 0%, #434343 78%);
+	background-image: -o-linear-gradient(351deg, #000000 0%, #434343 78%);
+	background-image: linear-gradient(81deg, #000000 0%, #434343 78%);
+	color: white;
+  font-size: 2.5vmin;
+	line-height: 3.5vmin;
+	height: 3vmin;
   padding: 0 1vw;
   text-align: left;
 }

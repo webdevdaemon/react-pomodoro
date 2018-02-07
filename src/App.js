@@ -1,46 +1,46 @@
-// eslint-disable no-undef
-import "./App.css"
+import './App.css'
 
-import React, { Component } from "react"
+import React, {Component} from 'react'
 
-import AppTitle from "./Components/AppTitle/index"
-import AppWrapper from "./Components/AppWrapper/index"
-import DigitalClockWrapper from "./Components/DigitalClockWrapper/index"
-import ControlWrapper from "./Components/ControlWrapper/index"
-import Hero from "./Components/Hero/index"
-import TaskListWrapper from "./Components/TaskListWrapper/index"
+import AppTitle from './Components/AppTitle/index'
+import AppWrapper from './Components/AppWrapper/index'
+import DigitalClockWrapper from './Components/DigitalClockWrapper/index'
+import ControlWrapper from './Components/ControlWrapper/index'
+import Hero from './Components/Hero/index'
+import TaskListWrapper from './Components/TaskListWrapper/index'
 
-import tasks from './helpers/tasks'
+import default_tasks from './helpers/tasks.js'
 
 // STATE INITIALIZER OBJECTS
 
 const control_panel_init = {
     TASK: {
-      name: "",
-      notes: "",
+      name: '',
+      notes: '',
       hours: 0,
       minutes: 0,
       rest_length: 5,
       notes_open: false,
-      position: null
-    }
+      position: null,
+    },
   },
   app_state_init = {
     timer: {
       hours: 0,
       minutes: 0,
-      seconds: 5
+      seconds: 5,
     },
     rest: false,
     rest_length: 1,
     is_running: false,
     task_done: false,
-    task_list: tasks, 
+    task_list: default_tasks.tasks,
+    task_current: default_tasks.tasks[0],
   },
   source_of_truth = Object.assign(
-    {current_task_name: app_state_init.task_list.name},
+    {},
     control_panel_init,
-    app_state_init
+    app_state_init,
   )
 
 // MAIN APP COMPONENT
@@ -49,41 +49,39 @@ class App extends Component {
   state = source_of_truth
 
   _onControlPanelChange = (e, value = e.target.value, name = e.target.name) => {
-    let updater = {
-      TASK: Object.assign({}, this.state.TASK, { [name]: value })
-    }
-    this.setState(updater, () => console.log("RE-RENDERED: FORM INPUT"))
+    let updater = {TASK: Object.assign({}, this.state.TASK, {[name]: value})}
+    this.setState(updater, () => console.log('RE-RENDERED: FORM INPUT'))
   }
 
   _controlPanelInit = () => {
     this.setState(Object.assign({}, this.state, control_panel_init))
   }
 
-  _timeKiller = ({ hours, minutes, seconds }) => {
+  _timeKiller = ({hours, minutes, seconds}) => {
     let new_timer_obj = {}
     if (seconds > 0) {
       new_timer_obj = {
         timer: {
           hours: hours,
           minutes: minutes,
-          seconds: seconds - 1
-        }
+          seconds: seconds - 1,
+        },
       }
     } else if (minutes > 0 && seconds === 0) {
       new_timer_obj = {
         timer: {
           hours: hours,
           minutes: minutes - 1,
-          seconds: 59
-        }
+          seconds: 59,
+        },
       }
     } else if (hours > 0 && (minutes === 0 && seconds === 0)) {
       new_timer_obj = {
         timer: {
           hours: hours - 1,
           minutes: 59,
-          seconds: 59
-        }
+          seconds: 59,
+        },
       }
     } else if (seconds === 0 && minutes === 0 && hours === 0) {
       new_timer_obj = !this.state.rest
@@ -93,8 +91,8 @@ class App extends Component {
             timer: {
               seconds: 0,
               minutes: this.state.rest_length,
-              hours: 0
-            }
+              hours: 0,
+            },
           }
         : {
             is_running: false,
@@ -103,8 +101,8 @@ class App extends Component {
             timer: {
               seconds: 0,
               minutes: 0,
-              hours: 0
-            }
+              hours: 0,
+            },
           }
     } else {
       return
@@ -121,43 +119,38 @@ class App extends Component {
         } else {
           clearInterval(window.interval)
           if (this.state.task_done) {
-            console.log("top")
+            console.log('top')
             this._getNextTaskFromList()
           }
         }
       }, 1000)
     } else {
       clearInterval(window.interval)
-      this.setState({
-        is_running: false
-      }, () => {
+      this.setState({is_running: false}, () => {
         if (this.state.task_done) {
-          console.log("bottom")
-            this._getNextTaskFromList()
-          }
+          console.log('bottom')
+          this._getNextTaskFromList()
         }
-      )
+      })
     }
   }
 
   _timerToggler = () => {
     this.setState((prevState, props) => {
       this._ticker(!prevState.is_running)
-      return {
-        is_running: !prevState.is_running
-      }
+      return {is_running: !prevState.is_running}
     })
   }
 
-  _timerSetter = ({ hours, minutes, rest_length }) => {
+  _timerSetter = ({hours, minutes, rest_length}) => {
     this.setState({
       timer: {
         hours: hours,
         minutes: minutes,
-        seconds: 0
+        seconds: 0,
       },
       rest_length: rest_length,
-      task_done: false
+      task_done: false,
     })
   }
 
@@ -165,37 +158,30 @@ class App extends Component {
     let t_l = this.state.task_list,
       new_list = [...t_l, task_item]
     new_list = new_list.map((item, dex) =>
-      Object.assign({}, item, { position: dex })
+      Object.assign({}, item, {position: dex}),
     )
-    this.setState(
-      {
-        task_list: new_list
-      },
-      () => {
-        console.log(t_l)
-        console.log(new_list)
-      }
-    )
+    this.setState({task_list: new_list}, () => {
+      console.log(t_l)
+      console.log(new_list)
+    })
   }
 
   _getNextTaskFromList = (task_list = this.state.task_list.slice()) => {
     let current = task_list[0] || null
     this.setState(
-      {
-        task_list: task_list.slice(1),
-        current_task_name: current
-      },
+      {task_list: task_list.slice(1), current_task_name: current},
       () => {
         console.log(
-          `old_task_list:   ${task_list}\nnew.task_list:   ${this.state
-            .task_list}\ncurrent:   ${current}`
+          `old_task_list:   ${task_list}\nnew.task_list:   ${
+            this.state.task_list
+          }\ncurrent:   ${current}`,
         )
         this._timerSetter(
           this.state.task_list.length === 0
             ? app_state_init
-            : this.state.current_task_name
+            : this.state.current_task_name,
         )
-      }
+      },
     )
   }
 
@@ -204,8 +190,8 @@ class App extends Component {
       timer: {
         hours: 0,
         minutes: prevState.rest_length,
-        seconds: 0
-      }
+        seconds: 0,
+      },
     }))
   }
 
@@ -215,41 +201,30 @@ class App extends Component {
         ? acc.concat(item)
         : [item].concat(acc)
     }, [])
-    this.setState({
-      task_list: new_list
-    }, () => { console.log("TASK PROMOTED") }
-    )
+    this.setState({task_list: new_list}, () => {
+      console.log('TASK PROMOTED')
+    })
   }
 
   _deleteTask = omega_task => {
     let new_list = this.state.task_list.filter(
-      item => item.position !== omega_task.position
+      item => item.position !== omega_task.position,
     )
-    this.setState(
-      { task_list: new_list },
-      () => {
-        console.log("TASK DELETED")
-      }
-    )
+    this.setState({task_list: new_list}, () => {
+      console.log('TASK DELETED')
+    })
   }
 
   _notesToggler = (e, target_pos) => {
     let task_list = this.state.task_list.map(
       item =>
         item.position === target_pos
-          ? Object.assign({}, item, {
-              notes_open: !item.notes_open
-            })
-          : item
+          ? Object.assign({}, item, {notes_open: !item.notes_open})
+          : item,
     )
-    this.setState(
-      {
-        task_list
-      },
-      () => {
-        console.log("NOTES TOGGLED!!!")
-      }
-    )
+    this.setState({task_list}, () => {
+      console.log('NOTES TOGGLED!!!')
+    })
   }
 
   render() {
@@ -266,7 +241,7 @@ class App extends Component {
       setTimerFromRest: this._setTimerFromRest,
       promoteTask: this._promoteTask,
       deleteTask: this._deleteTask,
-      notesToggler: this._notesToggler
+      notesToggler: this._notesToggler,
     }
 
     return (

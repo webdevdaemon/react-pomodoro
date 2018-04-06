@@ -1,0 +1,7 @@
+.AppWrapper {
+	background: transparent;
+  overflow: hidden;
+  margin: auto;
+  max-width: 960px;
+  width: 100%;
+}

@@ -1,0 +1,169 @@
+.ControlPanel {
+	background: transparent;
+  /* border-radius: 0 0 12px 12px; */
+	color: white;
+	display: block;
+}
+
+/*TITLE*/
+
+/* .control-panel-title {
+  background: #a5acaf;
+  border-radius: 4px 4px 0 0;
+  color: white;
+} */
+
+.control-panel-title p {
+  color: white;
+  font-size: 3vmin;
+  margin: 0;
+  padding: 0;
+  text-shadow: 3px 3px 1px #111;
+}
+
+/*FORM*/
+
+.ControlPanel form {
+  background: transparent;
+  padding-top: 1vh;
+  padding-bottom: 2vh;
+}
+
+.ControlPanel input[type='text'],
+.ControlPanel textarea {
+  background: #f0ff8c;
+	border: solid 1px #a5acaf;
+	font-size: 3vmin;
+  font-family : 'Avenir', sans-serif;
+  padding: 6px 12px;
+  width: 100%;
+}
+
+.ControlPanel input[type='number'] {
+  border: none;
+  border-radius: 0;
+	font-size: 3vmin;
+}
+
+.ControlPanel .label-task-name {
+	display: block;
+}
+
+/*INPUTS ALL*/
+
+.task-info-input-group {
+  line-height: 1.5;
+}
+
+.ControlPanel input[type='number'],
+.ControlPanel input[type='submit'] {
+  text-align: center;
+  margin: 0;
+  width: 100%;
+}
+
+.ControlPanel input[type='number'] {
+  font-family: 'Nova Mono', 'Roboto', sans-serif;
+  font-size: 5vmin;
+  font-weight: 900;
+  padding: 0 0 0 16px;
+}
+
+/*INFO INPUTS*/
+
+#task-name {
+  border-bottom: solid 1px #444;
+  border-radius: 5px 5px 0 0;
+  font-size: 2vw;
+  line-height: 1;
+}
+
+#task-notes {
+	border-radius: 0 0 5px 5px;
+	font-size: 2vw;
+	line-height: 1;
+}
+
+/* TIME INPUTS */
+
+#task-hours {
+  background: #f0ff8c;
+  border-radius: 0 0 0 8px;
+}
+
+#task-minutes {
+  background: #f0ff8c;
+}
+
+#rest-length {
+  background: aqua;
+  color: #111;
+}
+
+/*SUBMIT TASK*/
+
+#create-task {
+  background: limegreen;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-family: 'Baloo', 'Roboto', 'sans-serif';
+  font-size: 4vmin;
+  margin: 0;
+  text-shadow: 3px 3px 1px #111;
+}
+
+.input-group.submit {
+  margin-top: 2vmin;
+}
+
+.ControlPanel input[type='submit'] {
+  border: none;
+
+}
+
+.ControlPanel label {
+	font-size: 3vmin;
+	line-height: 1;
+	text-decoration: underline;
+}
+
+.ControlPanel .input-section {
+	font-size: 3vmin;
+}
+
+.ControlPanel .input-section.title.rest {
+  /*background: cornflowerblue;*/
+  background: #a5acaf;
+  color: white;
+  font-size: 3vmin;
+  margin: 0;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.ControlPanel .input-section.title.work.hours {
+	/*background: greenyellow;*/
+  background: #a5acaf;
+  color: white;
+	font-size: 3vmin;
+  margin: 0;
+  padding: 0;
+	text-decoration: underline;
+}
+
+.ControlPanel .input-section.title.work.minutes {
+  background: #a5acaf;
+  color: white;
+	font-size: 3vmin;
+  margin: 0;
+  padding: 0;
+	text-decoration: underline;
+}
+
+.ControlPanel form .task-time-inputs {
+  border: solid 1px #a5acaf;
+  border-radius: 4px 4px 8px 8px;
+  overflow: hidden;
+  margin-top: 1vmin;
+}

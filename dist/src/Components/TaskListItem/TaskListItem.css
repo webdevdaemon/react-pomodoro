@@ -1,0 +1,266 @@
+.TaskListItem
+{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 100%;
+    max-height: 50px;
+    margin: .5vw;
+    padding: 4px 8px;
+
+    color: white;
+    border: 1px solid #a5acaf;
+    border-radius: 12px;
+    background: #474748;
+}
+
+.item-time
+{
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    height: 100%;
+    -ms-align-items: center;
+      /* align-self: stretch; */
+}
+
+.item-time p
+{
+    margin: 0 1vw 0 0;
+    padding: 0;
+}
+
+.item-text
+{
+    display: flex;
+
+    margin: 0;
+    padding: 0;
+
+    text-align: left;
+}
+
+.item-text .item-name p
+{
+    font-size: 2.8vmin;
+
+    margin: 0;
+    padding: 0;
+
+    text-decoration: underline;
+    text-transform: none;
+}
+
+.item-time,
+.item-break
+{
+    display: block;
+
+    margin: auto 0;
+    padding: 0;
+    padding-right: 2vw;
+
+    text-align: left;
+}
+
+.item-time p,
+.item-break p
+{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    padding-right: 2vmin;
+}
+
+.item-time {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: flex-start;
+  -ms-align-items: center;
+  align-items: center;
+  margin: auto 0;
+  padding: 0;
+}
+
+.item-break p,
+.item-time {
+    padding: 0 0 0 1vw;
+}
+
+.item-promote,
+.item-delete
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.item-delete button,
+.item-promote button
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 24px;
+    max-height: 24px;
+    padding: 0 0 .2vw 0;
+}
+
+.item-promote button
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    margin: auto;
+
+    border: none;
+    border-radius: 6px 0 0 6px;
+    background: cornflowerblue;
+}
+
+.item-promote button svg
+{
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    max-height: 25px;
+    margin: auto 0;
+}
+
+.item-delete button
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    margin: auto;
+
+    border: none;
+    border-radius: 0 6px 6px 0;
+    background: red;
+}
+
+.item-delete button svg
+{
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    max-height: 25px;
+    margin: auto;
+}
+
+.task-list-item-top-row
+{
+    font-family:  'aldrich', sans-serif;
+    font-size: 2vmin;
+    font-weight: 700;
+
+    display: flex;
+    align-items: stretch;
+
+    margin: auto 0;
+    padding: 0;
+
+    width: 100%;
+
+    text-transform: lowercase;
+}
+
+.task-list-item-bottom-row
+{
+    font-family: sans-serif;
+    font-size: 2vmin;
+
+    width: 100%;
+
+    background: orangered;
+}
+
+.item-notes
+{
+    font-family: 'avenir', sans-serif;
+    font-size: 1.5vmin;
+    font-weight: bold;
+    line-height: 1.15;
+
+    overflow: scroll;
+
+    width: 100%;
+    max-height: 200px;
+    padding: .25vh .5vw;
+
+    transition: ease-in-out .75s all;
+    text-align: left;
+
+    color: #444;
+    background: #f0ff8c;
+}
+
+.item-notes p
+{
+    max-height: 125px;
+}
+
+.item-notes-toggle
+{
+    font-family: 'aldrich', 'helvetica', sans-serif;
+    font-size: inherit;
+
+    height: auto;
+    margin: auto;
+    padding: 1vw;
+}
+
+.item-notes-toggle-wrapper.col-3
+{
+    height: 100%;
+    margin: auto;
+    padding: 0 2vmin 0 0;
+}
+
+button.item-notes-toggle.btn.btn-danger.btn-block
+{
+    max-height: 30px;
+    margin: .33vw 0;
+    padding: .2vw 0;
+
+    border: solid 2px white;
+}
+
+button.promote
+{
+    height: 100%;
+    max-height: 30px;
+    margin: auto;
+
+    border: solid 2px white;
+    border-right: solid 1px white;
+}
+
+button.delete
+{
+    height: 100%;
+    max-height: 30px;
+    margin: auto;
+
+    border: solid 2px white;
+    border-left: solid 1px white;
+}
+
+button.delete svg,
+button.promote svg {
+    color: white;
+}

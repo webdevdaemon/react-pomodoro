@@ -1,0 +1,82 @@
+.DigitalClockWrapper {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 1080px;
+}
+
+.timer-toggle-wrap {
+    margin: 0;
+    padding: 0;
+}
+
+.timer-toggle {
+    background: limegreen;
+    color: white;
+    font-size: 4vw;
+    padding: 6px 0 0 0;
+    text-shadow: 3px 3px 1px #111;
+    border-radius: 1vw;
+    box-shadow: 0 0 15px yellow;
+    font-family: 'Baloo', 'Roboto', 'sans-serif';
+    width: 100%;
+}
+
+@-webkit-keyframes pulser {
+    0% {
+        text-shadow: 0 0 0 black;
+        transform: scale(1);
+    }
+    25% {
+        text-shadow: 4px 0 1px black;
+        transform: scale(1.2);
+    }
+    50% {
+        text-shadow: 0 0 0 black;
+        transform: scale(1);
+    }
+    75% {
+        text-shadow: -4px 0 1px black;
+        transform: scale(1.2);
+    }
+    100% {
+        text-shadow: 0 0 0 black;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulser {
+    0% {
+        text-shadow: 0 0 0 black;
+        transform: scale(1);
+    }
+    25% {
+        text-shadow: 4px 0 1px black;
+        transform: scale(1.2);
+    }
+    50% {
+        text-shadow: 0 0 0 black;
+        transform: scale(1);
+    }
+    75% {
+        text-shadow: -4px 0 1px black;
+        transform: scale(1.2);
+    }
+    100% {
+        text-shadow: 0 0 0 black;
+        transform: scale(1);
+    }
+}
+
+
+/*.timer-toggle-animated p {
+    animation: pulser 15s ease-in-out 0s infinite forwards;
+    margin: auto 0;
+    padding: 0;
+}*/
+
+.timer-toggle p {
+    margin: auto;
+    padding: 0;
+}

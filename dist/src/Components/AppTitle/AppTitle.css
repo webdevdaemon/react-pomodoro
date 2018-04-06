@@ -1,0 +1,50 @@
+.AppTitle {
+	background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+	line-height: 1.2;
+  margin-bottom: 0;
+  padding: 1vw 1vw 1vw .5vw;
+}
+
+.AppTitle p,
+.AppTitle p small {
+	color: #efefef;
+	font-family: 'helvetica neue', sans-serif;
+	text-shadow: 5px 3px 1px #000;
+  margin: 0;
+  padding: 0;
+}
+
+.AppTitle .app-title-main small {
+	font-size: 1.5vmin;
+  font-style: italic;
+}
+
+.AppTitle .app-title-sub {
+	font-size: 2vmin;
+  padding-left: 12px;
+  text-align: right;
+}
+
+.AppTitle h2 {
+	color: yellow;
+	font-size: 6vmin;
+	padding: 0;
+  margin: 0;
+  text-shadow: 5px 3px 1px #000;
+}
+
+.AppTitle .work-rest-alert {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vmin;
+}
+
+  .AppTitle .work-rest-alert p.work-rest-alert-p {
+  font-family: 'Baloo', 'Roboto', 'sans-serif';
+  margin: 0;
+  padding: 0;
+}

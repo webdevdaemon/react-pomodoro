@@ -1,0 +1,15 @@
+.ControlWrapper {
+	border-radius: 24px;
+	/* 121 Marble Wall: */
+	background-image: -webkit-linear-gradient(271deg, #E6DEE9 0%, #BDC2E8 100%);
+	background-image: -o-linear-gradient(271deg, #E6DEE9 0%, #BDC2E8 100%);
+	background-image: linear-gradient(1deg, #E6DEE9 0%, #BDC2E8 100%);
+}
+
+.ControlWrapper .control-wrapper-title p {
+  color: white;
+  font-size: 4vmin;
+	text-shadow: 1px 2px 0 #000000bb;
+	margin: 0;
+	padding: 0;
+}

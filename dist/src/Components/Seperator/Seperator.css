@@ -1,0 +1,31 @@
+.Seperator {
+	display: block;
+  font-size: 15vmin;
+}
+
+/* --- BLINK ANIMATION -- */
+
+/* --- ANIMATION SETUP --- */
+
+.Seperator {
+  animation: separator-flash 5s ease-in-out 0s infinite;}
+
+@-webkit-keyframes separator-flash {
+  0%    { opacity : 0;}
+  17%   { opacity : 1; color: orangered;}
+  35%   { opacity : 0;}
+  52%   { opacity : 1; color: cornflowerblue;}
+  69%   { opacity : 0;}
+  86%   { opacity : 1; color: greenyellow;}
+  100%  { opacity : 0;}
+}
+
+@keyframes separator-flash {
+  0%    { opacity : 0;}
+  17%   { opacity : 1; color: orangered;}
+  35%   { opacity : 0;}
+  52%   { opacity : 1; color: cornflowerblue;}
+  69%   { opacity : 0;}
+  86%   { opacity : 1; color: greenyellow;}
+  100%  { opacity : 0;}
+}

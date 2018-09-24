@@ -212,6 +212,8 @@
 .item-notes p
 {
     max-height: 125px;
+    z-index: 1000;
+    position: static;
 }
 
 .item-notes-toggle
